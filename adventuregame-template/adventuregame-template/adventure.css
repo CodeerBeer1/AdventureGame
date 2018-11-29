@@ -1,0 +1,281 @@
+/*FONTS*/
+
+	@font-face {
+		font-family: BalooTamma;
+		src: url(fonts/BalooTamma-Regular.ttf);
+	}
+
+	@font-face {
+		font-family: Archivo;
+		src: url(fonts/Archivo-SemiBold.ttf);
+	}
+
+/*FONTS*/
+
+
+
+/*START*/
+
+	body {
+		font-family: BalooTamma;
+		background-color: #404040;
+		margin: 0px;
+	}
+
+	#game-container {
+		width: 1920px;
+		margin: 0px auto;
+		background-color: #001a4d;
+	}
+
+	#gameTitle {
+		font-size: 100px;
+		color: #cccccc;
+		margin: 0px 0px;
+		background-color: #595959;
+		width: 1200px;
+		padding: 0px 0px;
+		text-align: center;
+		transition: 0.3s;
+		border-radius: 0px 300px 0px 0px;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+	}
+
+				#gameTitle:hover {
+					width: 90%;
+					background-color: #d9d9d9;
+					color: black;
+					cursor: pointer;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+				}
+
+				#gameTitle:active {
+					border-width: 50px;
+					border-color: red;
+					transition: 0s;
+					width: 1708px;
+				}
+
+	#storyBtnTitle {
+		font-size: 100px;
+		color: #cccccc;
+		margin: 0px 0px;
+		background-color: #595959;
+		width: 1200px;
+		padding: 0px 0px;
+		text-align: center;
+		transition: 0.3s;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+	}
+
+				#storyBtnTitle:hover {
+					width: 90%;
+					background-color: #d9d9d9;
+					color: black;
+					cursor: pointer;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+				}
+
+				#storyBtnTitle:active {
+					border-width: 50px;
+					border-color: red;
+					transition: 0s;
+					width: 1708px;
+				}
+
+	#modalStory {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+		left: 0px;
+		top: 0px;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#modalStoryText {
+		font-size: 30px;
+		background-color: white;
+		color: black;
+		width: 700px;
+		height: 300px;
+		padding: 40px;
+		margin: 200px auto 100px auto;
+	}
+
+	#modalStoryClose {
+		font-size: 75px;
+		color: #cccccc;
+		margin: 0px 0px;
+		background-color: #595959;
+		width: 1200px;
+		padding: 20px;
+		text-align: center;
+		transition: 0.3s;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+		border-radius: 0px 25px 25px 0px;
+		outline: none;
+		font-family: BalooTamma;
+	}
+
+				#modalStoryClose:hover {
+					width: 90%;
+					background-color: #d9d9d9;
+					color: black;
+					cursor: pointer;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+				}
+
+				#modalStoryClose:active {
+					border-left-width: 50px;
+					border-color: red;
+					transition: 0s;
+					width: 1708px;
+				}
+
+	#manualTitle {
+		font-size: 100px;
+		color: #cccccc;
+		margin: 0px 0px;
+		background-color: #595959;
+		width: 1200px;
+		padding: 0px 0px;
+		text-align: center;
+		transition: 0.3s;
+		border-radius: 0px 0px 300px 0px;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+	}
+
+				#manualTitle:hover {
+					width: 90%;
+					background-color: #d9d9d9;
+					color: black;
+					cursor: pointer;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+				}
+
+				#manualTitle:active {
+					border-left-width: 50px;
+					border-color: red;
+					transition: 0s;
+				}
+	#modalManual {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+		left: 0px;
+		top: 0px;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#modalManualText {
+		font-size: 30px;
+		background-color: white;
+		color: black;
+		width: 700px;
+		height: 250px;
+		padding: 40px;
+		margin: 200px auto 100px auto;
+	}
+
+	#modalManualClose {
+		font-size: 75px;
+		color: #cccccc;
+		margin: 0px 0px;
+		background-color: #595959;
+		width: 1200px;
+		padding: 20px;
+		text-align: center;
+		transition: 0.3s;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+		border-radius: 0px 25px 25px 0px;
+		outline: none;
+		font-family: BalooTamma;
+	}
+
+				#modalManualClose:hover {
+					width: 90%;
+					background-color: #d9d9d9;
+					color: black;
+					cursor: pointer;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+				}
+
+				#modalManualClose:active {
+					border-left-width: 50px;
+					border-color: red;
+					transition: 0s;
+				}
+
+/*START*/
+
+
+
+/*SCENES*/
+
+	#sceneP {
+		font-size: 25px;
+		color: white;
+		background-color: #595959;
+		border-width: 0px 0px 0px 20px;
+		border-style: solid;
+		padding: 10px 30px;
+		border-color: black;
+		border-radius: 0px 25px 25px 0px;
+		width: 600px;
+		line-height: 50px;
+		margin: 0px;
+	}
+
+	#volgendeDiv {
+		text-align: right;
+	}
+
+	#nextButton {
+		position: relative;
+		bottom: 220px;
+		transition: .3s;
+		outline: none;
+		font-size: 25px;
+		color: white;
+		background-color: #595959;
+		border-width: 0px 10px 0px 0px;
+		border-style: solid;
+		padding: 30px;
+		border-color: white;
+		width: 300px;
+		border-radius: 0px 0px 0px 100px;
+		font-family: Archivo;
+		font-size: 25px;
+	}
+
+				#nextButton:hover {
+					border-radius: 50px 0px 0px 50px;
+					width: 400px;
+					background-color: white;
+					color: black;
+					border-color: black;
+					cursor: pointer;
+				}
+
+/*SCENES*/
