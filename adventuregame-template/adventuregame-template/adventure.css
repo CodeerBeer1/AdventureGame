@@ -43,6 +43,10 @@
 		border-color: white;
 	}
 
+				/*To be done#gameTitle:hover #gameContainer{
+					color: red;
+				}*/
+
 				#gameTitle:hover {
 					width: 90%;
 					background-color: #d9d9d9;
@@ -57,6 +61,105 @@
 					border-color: red;
 					transition: 0s;
 					width: 1708px;
+				}
+
+	#modalStart {
+		display: none;
+		position: fixed;
+		z-index: 1;
+		height: 100%;
+		width: 100%;
+		overflow: auto;
+		left: 0px;
+		top: 0px;
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	#modalStartText {
+		font-size: 30px;
+		background-color: white;
+		color: black;
+		width: 580px;
+		padding: 40px;
+		margin: 200px auto 100px auto;
+		transition: .3s;
+		border-style: solid;
+		border-width: 20px;
+		border-color: black;
+		border-radius: 25px;
+	}
+
+				/*To be done#modalStartClose:hover #modalStartText {
+					border-color: red;
+				}*/
+
+	#modalStartClose {
+		font-size: 30px;
+		color: #cccccc;
+		margin: 100px 0px;
+		background-color: #595959;
+		width: 200px;
+		padding: 20px;
+		text-align: center;
+		transition: 0.3s;
+		border-left-style: solid;
+		border-width: 0px 0px 0px 30px;
+		border-color: white;
+		border-radius: 0px 25px 25px 0px;
+		outline: none;
+		top: 100px;
+		font-family: BalooTamma;
+		float: left;
+	}
+
+				#modalStartClose:hover {
+					width: 500px;
+					background-color: white;
+					color: black;
+					border-color: black;
+					border-radius: 0px 100px 100px 0px;
+					cursor: pointer;
+				}
+
+				#modalStartClose:active {
+					border-width: 0px 0px 0px 50px;
+					border-color: red;
+					transition: 0s;
+				}
+
+	#modalStartContinue {
+		font-size: 30px;
+		color: #cccccc;
+		margin: 100px 0px;
+		background-color: #595959;
+		width: 200px;
+		padding: 20px;
+		text-align: center;
+		transition: 0.3s;
+		border-right-style: solid;
+		border-width: 0px 30px 0px 0px;
+		border-color: white;
+		border-radius: 25px 0px 0px 25px;
+		outline: none;
+		font-family: BalooTamma;
+		top: 100px;
+		left: 1525px;
+		float: right;
+	}
+
+				#modalStartContinue:hover {
+					cursor: pointer;
+					width: 500px;
+					background-color: white;
+					color: black;
+					border-color: black;
+					border-radius: 100px 0px 0px 100px;
+				}
+
+				#modalStartContinue:active {
+					border-width: 0px 50px 0px 0px;
+					border-color: red;
+					transition: 0s;
 				}
 
 	#storyBtnTitle {
@@ -234,6 +337,7 @@
 /*SCENES*/
 
 	#sceneP {
+		float: left;
 		font-size: 25px;
 		color: white;
 		background-color: #595959;
@@ -241,19 +345,15 @@
 		border-style: solid;
 		padding: 10px 30px;
 		border-color: black;
-		border-radius: 0px 25px 25px 0px;
+		border-radius: 0px 0px 25px 0px;
 		width: 600px;
 		line-height: 50px;
 		margin: 0px;
 	}
 
-	#volgendeDiv {
-		text-align: right;
-	}
 
 	#nextButton {
-		position: relative;
-		bottom: 220px;
+		float: right;
 		transition: .3s;
 		outline: none;
 		font-size: 25px;
@@ -276,6 +376,42 @@
 					color: black;
 					border-color: black;
 					cursor: pointer;
+				}
+
+				#nextButton:active {
+					transition: 0s;
+					border-width: 0px 20px 0px 0px;
+				}
+
+	#prevButton {
+		position: fixed;
+		top: 350px; 
+		transition: .3s;
+		outline: none;
+		font-size: 25px;
+		color: white;
+		background-color: #595959;
+		border-width: 0px 0px 0px 10px;
+		border-style: solid;
+		padding: 30px;
+		border-color: white;
+		width: 300px;
+		border-radius: 0px 100px 100px 0px;
+		font-family: Archivo;
+		font-size: 25px;
+	}
+
+				#prevButton:hover {
+					width: 400px;
+					background-color: white;
+					color: black;
+					border-color: black;
+					cursor: pointer;
+				}
+
+				#prevButton:active {
+					transition: 0s;
+					border-width: 0px 0px 0px 20px;
 				}
 
 /*SCENES*/
