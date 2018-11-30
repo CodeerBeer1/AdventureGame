@@ -11,7 +11,8 @@
 	var sceneOneText=document.createTextNode("Er was is een Henk. Hij was dik, lang en verlegen. Hij wou even naar buiten om boodschappen te doen, hij kwam onderweg zijn buurman Koen tegen en zei hoi tegen hem.");
 	var sceneTwoText=document.createTextNode("Henk liep naar de supermarkt. Voor de supermarkt waren veel berenvallen voor geen reden. Henk was slechtziend dus zag het niet. Hij stapte op een val en zijn voet was afgehakt door de stekelige tanden van de val. Henk en zijn voet vielen allebij in een put naast hem.");
 	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce GTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4k display 140hz HDR etc.");
-	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan");
+	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan.");
+	var sceneFiveText=document.createTextNode("Ondertussen was Koen effe een biertje aan het tappen.");
 
 //VarsMetLangeTexten
 
@@ -94,9 +95,10 @@
 
 	}
 
-	function borderColorChange(color) {
+	function borderColorChange(color, bgColor) {
 		
 		modalStartText.style.borderColor=color;
+		modalStart.style.backgroundColor=bgColor;
 
 	}
 
@@ -182,11 +184,43 @@
 		
 		console.log("Scene 4")
 		document.body.style.backgroundImage="url(img/situatie4.png)"
+		changeButtonStyleLight();
 
-		nextButton.setAttribute("onclick", "")
-		prevButton.setAttribute("onclick", "sceneThree()")
+		nextButton.setAttribute("onclick", "sceneFive()");
+		prevButton.setAttribute("onclick", "sceneThree()");
+
+		nextButton.setAttribute("onmousemove", "nextButtonHoverLight()");
+		prevButton.setAttribute("onmousemove", "prevButtonHoverLight()");
+
+		nextButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
+		prevButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
 
 		sceneP.innerHTML=sceneFourText.textContent;
+
+	}
+
+	function sceneFive(argument) {
+
+		console.log("Scene 5");
+		document.body.style.backgroundImage="url(img/situatie5.png)";
+		changeButtonStyleDark()
+
+		nextButton.setAttribute("onclick", "sceneSix()");
+		prevButton.setAttribute("onclick", "sceneFour()");
+
+		nextButton.setAttribute("onmousemove", "nextButtonHoverDark()");
+		prevButton.setAttribute("onmousemove", "prevButtonHoverDark()");
+
+		nextButton.setAttribute("onmouseleave", "changeButtonStyleDark()");
+		prevButton.setAttribute("onmouseleave", "changeButtonStyleDark()");
+
+		sceneP.innerHTML=sceneFiveText.textContent;
+
+	}
+
+	function sceneSix(argument) {
+		
+		console.log("Scene 6");
 
 	}
 
@@ -230,7 +264,7 @@
 	var gameTitle=document.createElement("p");
 	gameTitle.setAttribute("id", "gameTitle");
 	gameTitle.setAttribute("onclick", "confirm()");
-	gameTitle.setAttribute("onmousemove", "backgroundColorChange('#0000ff', '#000080')");
+	gameTitle.setAttribute("onmousemove", "backgroundColorChange('#0000b3', '#000080')");
 	gameTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
 
 		var modalStartText=document.createElement("p");
@@ -248,7 +282,7 @@
 	var manualTitle=document.createElement("p");
 	manualTitle.setAttribute("id", "manualTitle");
 	manualTitle.setAttribute("onclick", "showManualText()");
-	manualTitle.setAttribute("onmousemove", "backgroundColorChange('#00cc00', '#145214')");
+	manualTitle.setAttribute("onmousemove", "backgroundColorChange('#248f24', '#145214')");
 	manualTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
 
 		var modalManualText=document.createElement("p");
@@ -260,14 +294,14 @@
 	var modalStartClose=document.createElement("button");
 	modalStartClose.setAttribute("id", "modalStartClose");
 	modalStartClose.setAttribute("onclick", "modalStart.style.display='none';");
-	modalStartClose.setAttribute("onmousemove", "borderColorChange('#ff0000')")
-	modalStartClose.setAttribute("onmouseleave", "borderColorChange('black')")
+	modalStartClose.setAttribute("onmousemove", "borderColorChange('#ff0000', 'rgba(80,0,0,0.5')")
+	modalStartClose.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')")
 
 	var modalStartContinue=document.createElement("button");
 	modalStartContinue.setAttribute("id", "modalStartContinue");
 	modalStartContinue.setAttribute("onclick", "sceneOne()");
-	modalStartContinue.setAttribute("onmousemove", "borderColorChange('#00ff00')");
-	modalStartContinue.setAttribute("onmouseleave", "borderColorChange('black')");
+	modalStartContinue.setAttribute("onmousemove", "borderColorChange('#00ff00', 'rgba(0,80,0,0.5')");
+	modalStartContinue.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')");
 
 	var modalStoryClose=document.createElement("button");
 	modalStoryClose.setAttribute("id", "modalStoryClose");

@@ -73,6 +73,7 @@
 		left: 0px;
 		top: 0px;
 		background-color: rgba(0,0,0,0.5);
+		transition: .3s;
 	}
 
 	#modalStartText {
