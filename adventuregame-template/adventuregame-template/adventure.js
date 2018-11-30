@@ -195,6 +195,9 @@
 		nextButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
 		prevButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
 
+		sceneP.style.backgroundColor="white";
+		sceneP.style.color="black";
+
 		sceneP.innerHTML=sceneFourText.textContent;
 
 	}
@@ -213,6 +216,9 @@
 
 		nextButton.setAttribute("onmouseleave", "changeButtonStyleDark()");
 		prevButton.setAttribute("onmouseleave", "changeButtonStyleDark()");
+
+		sceneP.style.backgroundColor="#595959";
+		sceneP.style.color="white";
 
 		sceneP.innerHTML=sceneFiveText.textContent;
 

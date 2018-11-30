@@ -353,6 +353,9 @@
 		margin: 0px;
 	}
 
+				#sceneP:hover {
+					opacity: 0.3;
+				}
 
 	#nextButton {
 		float: right;
