@@ -13,6 +13,7 @@
 	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce GTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4k display 140hz HDR etc.");
 	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan.");
 	var sceneFiveText=document.createTextNode("Ondertussen was Koen effe een biertje aan het tappen.");
+	var sceneSixText=document.createTextNode("Er verscheen iets op Henk's scherm waar hij een spel moet spelen om zijn voet terug te krijgen, het lijkt onlogisch maar Henk is dom en gelooft het toch.");
 
 //VarsMetLangeTexten
 
@@ -227,6 +228,53 @@
 	function sceneSix(argument) {
 		
 		console.log("Scene 6");
+		document.body.style.backgroundImage="url(img/scherm.png)";
+		changeButtonStyleLight();
+
+		nextButton.setAttribute("onclick", "sceneSeven()");
+		prevButton.setAttribute("onclick", "sceneFive()");
+
+		nextButton.setAttribute("onmousemove", "nextButtonHoverLight()");
+		prevButton.setAttribute("onmousemove", "prevButtonHoverLight()");
+
+		nextButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
+		prevButton.setAttribute("onmouseleave", "changeButtonStyleLight()");
+
+		sceneP.style.backgroundColor="white";
+		sceneP.style.color="black";
+
+		nextButton.style.display="block";
+		prevButton.style.display="block";
+		sceneP.style.display="block";
+		realStart.style.display="none";
+
+		sceneP.innerHTML=sceneSixText.textContent;
+
+	}
+
+	function sceneSeven(argument) {
+		
+		console.log("Starting InGame game");
+
+		nextButton.style.display="none";	
+		sceneP.style.display="none";
+
+		realStart.style.display="block";
+
+		prevButton.setAttribute("onclick", "sceneSix()");
+
+
+	}
+
+	function gameIntro(argument) {
+
+		console.log("Started InGame game")
+		document.body.style.backgroundImage="none";
+		document.body.style.backgroundColor="red";
+		document.body.style.fontFamily="BalooTamma";
+		prevButton.style.display="none";
+		realStart.style.display="none";
+		fourK.style.display="block";
 
 	}
 
@@ -340,6 +388,15 @@
 	var vorigeDiv=document.createElement("div");
 	vorigeDiv.setAttribute("id", "vorigeDiv");
 
+	var realStart=document.createElement("div");
+	realStart.setAttribute("id", "realStart");
+	realStart.setAttribute("onclick", "gameIntro()");
+	realStart.setAttribute("onmousemove", "prevButton.style.opacity='0'");
+	realStart.setAttribute("onmouseleave", "prevButton.style.opacity='1'");
+
+	var fourK=document.createElement("p");
+	fourK.setAttribute("id", "fourK");
+
 	var img=document.createElement("img");
 
 	var hr=document.createElement("hr");
@@ -436,7 +493,7 @@
 
 
 
-//SceneOne
+//NeededElements
 
 	gameContainer.appendChild(sceneP);
 	sceneP.appendChild(sceneOneText);
@@ -447,14 +504,26 @@
 	gameContainer.appendChild(vorigeDiv);
 	vorigeDiv.appendChild(prevButton);
 
+	gameContainer.appendChild(realStart);
+
+	gameContainer.appendChild(fourK);
+
 		var nextext=document.createTextNode("Volgende");
 	nextButton.appendChild(nextext);
 
 		var pretext=document.createTextNode("Vorige");
 	prevButton.appendChild(pretext);
 
+		var realtext=document.createTextNode("START");
+	realStart.appendChild(realtext);
+
+		var fourKText=document.createTextNode("4k 120 FPS HDR 1ms 144Hz");
+	fourK.appendChild(fourKText);
+
 	sceneP.style.display="none";
 	nextButton.style.display="none";
 	prevButton.style.display="none";
+	realStart.style.display="none";
+	fourK.style.display="none";
 
-//SceneOne
+//NeededElements

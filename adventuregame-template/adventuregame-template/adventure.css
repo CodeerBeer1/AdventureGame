@@ -419,4 +419,39 @@
 					border-width: 0px 0px 0px 20px;
 				}
 
+	#realStart {
+		position: relative;
+		font-size: 40px;
+		padding: 30px;
+		background-color: #800000;
+		color: black;
+		top: 550px;
+		width: 200px;
+		margin: 0px auto;
+		text-align: center;
+		border-top: solid 20px #330000;
+		border-bottom: solid 20px #330000;
+		border-radius: 100% 0px 100% 0px;
+		transition: .3s;
+	}
+
+				#realStart:hover {
+					border-style: double;
+					border-color: red;
+					background-color: yellow;
+					color: blue;
+					cursor: pointer;
+				}
+
 /*SCENES*/
+
+
+
+/*GAME*/
+
+	#fourK {
+		color: yellow;
+		margin: 0px;
+	}
+
+/*GAME*/
