@@ -3,8 +3,36 @@
 
 
 
-//VarsMetLangeTexten
+//RemovingBloatWare
 
+	var gameContainer=document.getElementById("game-container");
+
+	var beginelementarray=[
+		document.getElementById('title'),
+		document.getElementById('description'),
+		document.getElementById('game-buttons'),
+		document.getElementById('inventoryItem')
+	];
+
+	for (i=0; i<beginelementarray.length; i++) {
+		gameContainer.removeChild(beginelementarray[i]);
+	}
+
+//RemovingBloatWare
+
+
+
+//TextNodes
+
+	var text=document.createTextNode("Adventure Game");
+	var continueModalText=document.createTextNode("Ja");
+	var closeModalText=document.createTextNode("Terug");
+	var storytext=document.createTextNode("Verhaal");
+	var closeStartModalText=document.createTextNode("Nee");
+	var closeModalStoryText=document.createTextNode("Terug");
+	var manualtext=document.createTextNode("Speluitleg");
+	var nextext=document.createTextNode("Volgende");
+	var pretext=document.createTextNode("Vorige");
 	var modalStartTextNode=document.createTextNode("Weet je zeker dat je de spel wilt beginnen?");
 	var modalStoryTextNode=document.createTextNode("Er was is een Henk. Hij was lang, dik en verlegen. Hij wou even naar buiten gaan om boodschappen te doen, maar dat zal hem niet zo gemakkelijk lukken. Met zijn buurman Koen aan zijn kant denkt hij dat hij zonder problemen zijn boodschappen kan doen.");
 	var modalManualTextNode=document.createTextNode("In de verhaal moet je een spel spelen. Je kan kiezen tussen Easy, Medium en Hard difficulty. Bij iedere difficulty heb je andere tijden en moeilijkheden om de level te halen. Je krijgt ook punten die afhankelijk zijn van de difficulty.");
@@ -14,8 +42,16 @@
 	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan.");
 	var sceneFiveText=document.createTextNode("Ondertussen was Koen effe een biertje aan het tappen.");
 	var sceneSixText=document.createTextNode("Er verscheen iets op Henk's scherm waar hij een spel moet spelen om zijn voet terug te krijgen, het lijkt onlogisch maar Henk is dom en gelooft het toch.");
+	var realtext=document.createTextNode("START");
+	var fourKText=document.createTextNode("4K 120 FPS HDR 1ms 144Hz");
+	var welcomeText=document.createTextNode("Welcome To The Game");
+	var footext=document.createTextNode("Get your foot back now!");
+	var difficultyChooseText=document.createTextNode("Choose A difficulty");
+	var easyButtonText=document.createTextNode("Easy");
+	var mediumButtonText=document.createTextNode("Medium");
+	var hardButtonText=document.createTextNode("Hard");
 
-//VarsMetLangeTexten
+//TextNodes
 
 
 
@@ -272,9 +308,15 @@
 		document.body.style.backgroundImage="none";
 		document.body.style.backgroundColor="red";
 		document.body.style.fontFamily="BalooTamma";
+
 		prevButton.style.display="none";
 		realStart.style.display="none";
 		fourK.style.display="block";
+		welcome.style.display="block";
+		foot.style.display="block";
+		difficultyChoose.style.display="block";
+		difficultyDiv.style.display="block";
+		EnterName.style.display="block";
 
 	}
 
@@ -290,26 +332,76 @@
 
 	}
 
-//Functions
+	function startGameEasy(argument) {
+		
+		window.open("", "", "width=100 height=100");
+		welcome.style.display="none";
+		foot.style.display="none";
+		difficultyChoose.style.display="none";
+		difficultyDiv.style.display="none";
+		EnterName.style.display="none";
 
+		difficultyDisplay.style.display="block";
+		difficultyDisplay.innerHTML="Difficulty: Easy</br>";
+		nameDisplay.style.display="block";	
 
+		nameDisplay.innerHTML="Username: "+EnterName.value;
 
-//TheRemovingPart
+		/*if (EnterName==null||"Enter username") {
+			nameDisplay.innerHTML="Guest"
+		}
+		else if (EnterName!=null||"Enter username") {
+			nameDisplay.innerHTML="Username: "+EnterName.value;
+		}*/
+		
+		puzzleDiv.style.display="grid";
+		puzzleDiv.style.gridTemplateColumns="repeat(3, 33.3%)";
+		puzzleDiv.style.gridTemplateRows="repeat(3, 33.3%)";
 
-	var gameContainer=document.getElementById("game-container");
-
-	var beginelementarray=[
-		document.getElementById('title'),
-		document.getElementById('description'),
-		document.getElementById('game-buttons'),
-		document.getElementById('inventoryItem')
-	];
-
-	for (i=0; i<beginelementarray.length; i++) {
-		gameContainer.removeChild(beginelementarray[i]);
 	}
 
-//TheRemovingPart
+	function startGameMedium(argument) {
+
+		welcome.style.display="none";
+		foot.style.display="none";
+		difficultyChoose.style.display="none";
+		difficultyDiv.style.display="none";
+		EnterName.style.display="none";
+
+		difficultyDisplay.style.display="block";
+		difficultyDisplay.innerHTML="Difficulty: Medium</br>";
+		nameDisplay.style.display="block";
+		nameDisplay.innerHTML="Username: "+EnterName.value;
+
+		puzzleDiv.style.display="grid";
+
+		puzzleDiv.style.display="grid";
+		puzzleDiv.style.gridTemplateColumns="repeat(5, 20%)";
+		puzzleDiv.style.gridTemplateRows="repeat(5, 20%)";
+
+	}
+
+	function startGameHard(argument) {
+		
+		welcome.style.display="none";
+		foot.style.display="none";
+		difficultyChoose.style.display="none";
+		difficultyDiv.style.display="none";
+		EnterName.style.display="none";
+
+		difficultyDisplay.style.display="block";
+		difficultyDisplay.innerHTML="Difficulty: Hard</br>";
+		nameDisplay.style.display="block";
+		nameDisplay.innerHTML="Username: "+EnterName.value;
+
+		puzzleDiv.style.display="grid";
+		puzzleDiv.style.display="grid";
+		puzzleDiv.style.gridTemplateColumns="repeat(7, 14.3%)";
+		puzzleDiv.style.gridTemplateRows="repeat(7, 14.3%)";
+
+	}
+
+//Functions
 
 
 
@@ -321,8 +413,8 @@
 	gameTitle.setAttribute("onmousemove", "backgroundColorChange('#0000b3', '#000080')");
 	gameTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
 
-		var modalStartText=document.createElement("p");
-		modalStartText.setAttribute("id", "modalStartText");
+	var modalStartText=document.createElement("p");
+	modalStartText.setAttribute("id", "modalStartText");
 
 	var storyBtnTitle=document.createElement("p");
 	storyBtnTitle.setAttribute("id", "storyBtnTitle");
@@ -330,8 +422,8 @@
 	storyBtnTitle.setAttribute("onmousemove", "backgroundColorChange('#800000', '#660000')");
 	storyBtnTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
 
-		var modalStoryText=document.createElement("p");
-		modalStoryText.setAttribute("id", "modalStoryText");
+	var modalStoryText=document.createElement("p");
+	modalStoryText.setAttribute("id", "modalStoryText");
 
 	var manualTitle=document.createElement("p");
 	manualTitle.setAttribute("id", "manualTitle");
@@ -339,8 +431,8 @@
 	manualTitle.setAttribute("onmousemove", "backgroundColorChange('#248f24', '#145214')");
 	manualTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
 
-		var modalManualText=document.createElement("p");
-		modalManualText.setAttribute("id", "modalManualText");
+	var modalManualText=document.createElement("p");
+	modalManualText.setAttribute("id", "modalManualText");
 
 	var sceneP=document.createElement("p");
 	sceneP.setAttribute("id", "sceneP");
@@ -397,6 +489,44 @@
 	var fourK=document.createElement("p");
 	fourK.setAttribute("id", "fourK");
 
+	var welcome=document.createElement("p");
+	welcome.setAttribute("id", "welcome");
+
+	var foot=document.createElement("p");
+	foot.setAttribute("id", "foot");
+
+	var difficultyChoose=document.createElement("p");
+	difficultyChoose.setAttribute("id", "difficultyChoose");
+
+	var difficultyDiv=document.createElement("div");
+	difficultyDiv.setAttribute("id", "difficultyDiv");
+
+	var easyButton=document.createElement("button");
+	easyButton.setAttribute("id", "easyButton");
+	easyButton.setAttribute("onclick", "startGameEasy()");
+
+	var mediumButton=document.createElement("button");
+	mediumButton.setAttribute("id", "mediumButton");
+	mediumButton.setAttribute("onclick", "startGameMedium()");
+
+	var hardButton=document.createElement("button");
+	hardButton.setAttribute("id", "hardButton");
+	hardButton.setAttribute("onclick", "startGameHard()");
+
+	var difficultyDisplay=document.createElement("p");
+	difficultyDisplay.setAttribute("id", "difficultyDisplay");
+
+	var puzzleDiv=document.createElement("div");
+	puzzleDiv.setAttribute("id", "puzzleDiv");
+
+	var EnterName=document.createElement("input");
+	EnterName.setAttribute("id", "EnterName");
+	EnterName.setAttribute("value", "Enter username");
+	EnterName.setAttribute("onclick", "EnterName.value=null")
+
+	var nameDisplay=document.createElement("p");
+	nameDisplay.setAttribute("id", "nameDisplay");
+
 	var img=document.createElement("img");
 
 	var hr=document.createElement("hr");
@@ -412,11 +542,8 @@
 	//StartButton
 
 		gameContainer.appendChild(gameTitle);
-
-		var text=document.createTextNode("Adventure Game");
 		gameTitle.appendChild(text);
 		
-
 	//StartButton
 
 
@@ -431,10 +558,7 @@
 		modalStart.appendChild(modalStartClose);
 		modalStart.appendChild(modalStartContinue);
 
-			var closeStartModalText=document.createTextNode("Nee");
 		modalStartClose.appendChild(closeStartModalText);
-
-			var continueModalText=document.createTextNode("Ja");
 		modalStartContinue.appendChild(continueModalText);
 
 	//StartModal
@@ -444,9 +568,7 @@
 	//StoryButton
 
 		gameContainer.appendChild(storyBtnTitle);
-
-			var text=document.createTextNode("Verhaal");
-		storyBtnTitle.appendChild(text);
+		storyBtnTitle.appendChild(storytext);
 
 	//StoryButton
 
@@ -458,20 +580,16 @@
 		modalStoryText.appendChild(modalStoryTextNode);
 
 		modalStory.appendChild(modalStoryClose);
-
-			var closeModalText=document.createTextNode("Terug");
-		modalStoryClose.appendChild(closeModalText);
+		modalStoryClose.appendChild(closeModalStoryText);
 
 	//StoryModal
 
 
 
-	//ShowManual
+	//ManualButton
 
-		gameContainer.appendChild(manualTitle);
-
-			var text=document.createTextNode("Speluitleg");
-		manualTitle.appendChild(text);
+		gameContainer.appendChild(manualTitle);	
+		manualTitle.appendChild(manualtext);
 
 	//ManualButton
 
@@ -483,17 +601,17 @@
 		modalManualText.appendChild(modalManualTextNode);
 
 		modalManual.appendChild(modalManualClose);
-
-			var closeModalText=document.createTextNode("Terug");
 		modalManualClose.appendChild(closeModalText);
 
 	//ManualModal
+
+
 
 //Start
 
 
 
-//NeededElements
+//appendingNeededElements
 
 	gameContainer.appendChild(sceneP);
 	sceneP.appendChild(sceneOneText);
@@ -508,22 +626,43 @@
 
 	gameContainer.appendChild(fourK);
 
-		var nextext=document.createTextNode("Volgende");
+	gameContainer.appendChild(welcome);
+
+	gameContainer.appendChild(foot);
+
+	gameContainer.appendChild(difficultyChoose);
+
+	gameContainer.appendChild(difficultyDiv);
+	difficultyDiv.appendChild(easyButton);
+	difficultyDiv.appendChild(mediumButton);
+	difficultyDiv.appendChild(hardButton);
+
+	gameContainer.appendChild(nameDisplay);
+
+	gameContainer.appendChild(EnterName);
+
+	gameContainer.appendChild(difficultyDisplay);
+
+	gameContainer.appendChild(puzzleDiv);
+
 	nextButton.appendChild(nextext);
 
-		var pretext=document.createTextNode("Vorige");
 	prevButton.appendChild(pretext);
-
-		var realtext=document.createTextNode("START");
+		
 	realStart.appendChild(realtext);
 
-		var fourKText=document.createTextNode("4k 120 FPS HDR 1ms 144Hz");
 	fourK.appendChild(fourKText);
 
-	sceneP.style.display="none";
-	nextButton.style.display="none";
-	prevButton.style.display="none";
-	realStart.style.display="none";
-	fourK.style.display="none";
+	welcome.appendChild(welcomeText);
 
-//NeededElements
+	foot.appendChild(footext);
+
+	difficultyChoose.appendChild(difficultyChooseText);
+
+	easyButton.appendChild(easyButtonText);
+		
+	mediumButton.appendChild(mediumButtonText)
+
+	hardButton.appendChild(hardButtonText);
+
+//appendingNeededElements

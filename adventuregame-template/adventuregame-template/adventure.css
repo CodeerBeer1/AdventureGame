@@ -351,10 +351,12 @@
 		line-height: 50px;
 		transition: .3s;
 		margin: 0px;
+		display: none;
 	}
 
 				#sceneP:hover {
 					opacity: 0.3;
+					cursor: zoom-in;
 				}
 
 	#nextButton {
@@ -372,6 +374,7 @@
 		border-radius: 0px 0px 0px 100px;
 		font-family: Archivo;
 		font-size: 25px;
+		display: none;
 	}
 
 				#nextButton:hover {
@@ -404,6 +407,7 @@
 		border-radius: 0px 100px 100px 0px;
 		font-family: Archivo;
 		font-size: 25px;
+		display: none;
 	}
 
 				#prevButton:hover {
@@ -433,6 +437,7 @@
 		border-bottom: solid 20px #330000;
 		border-radius: 100% 0px 100% 0px;
 		transition: .3s;
+		display: none;
 	}
 
 				#realStart:hover {
@@ -450,8 +455,105 @@
 /*GAME*/
 
 	#fourK {
+		position: relative;
+		float: left;
 		color: yellow;
-		margin: 0px;
+		margin: 0px 5px;
+		display: none;
+		width: 200px;
+	}
+
+	#welcome {
+		text-align: center;
+		width: 1200px;
+		margin: 0px auto;
+		font-size: 100px;
+		color: yellow;
+		display: none;
+	}
+
+	#foot {
+		text-align: center;
+		width: 600px;
+		margin: 0px auto;
+		font-size: 50px;
+		color: yellow;
+		display: none;
+	}
+
+	#difficultyChoose {
+		text-align: center;
+		width: 600px;
+		margin: 0px auto;
+		font-size: 50px;
+		color: blue;
+		display: none;
+	}
+
+	#difficultyDiv {
+		margin: 100px auto 0px auto;
+		width: 1780px;
+		display: none;
+	}
+
+	#difficultyDiv button {
+		font-family: BalooTamma;
+		font-size: 50px;
+		margin: 0px 0px 0px 70px;
+		padding: 20px;
+		background-color: yellow;
+		color: red;
+		border-style: solid;
+		border-width: 20px;
+		border-color: blue;
+		width: 500px;
+		outline: none;
+		}
+				#difficultyDiv button:hover {
+					cursor: pointer;
+					background-color: red;
+					border-color: yellow;
+					color: blue;
+				}
+
+	#difficultyDisplay {
+		position: relative;
+		color: yellow;
+		margin: 0px 5px;
+		display: none;
+		left: 1710px;
+		width: 200px;
+		text-align: right;
+	}
+
+	#EnterName {
+		display: none;
+		margin: 50px auto;
+		font-size: 50px;
+		border-style: solid;
+		border-color: blue;
+		border-width: 10px;
+		outline: none;
+	}
+
+	#nameDisplay {
+		position: relative;
+		color: yellow;
+		margin: 0px 5px;
+		display: none;
+		float: right;
+		width: 200px;
+		text-align: right;
+	}
+
+	#puzzleDiv {
+		display: none;
+		margin: auto auto;
+		width: 1000px;
+		height: 800px;
+		border-style: solid;
+		border-width: 20px;
+		border-color: yellow;
 	}
 
 /*GAME*/
