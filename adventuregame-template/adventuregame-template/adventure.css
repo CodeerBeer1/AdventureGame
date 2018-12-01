@@ -548,12 +548,28 @@
 
 	#puzzleDiv {
 		display: none;
-		margin: auto auto;
-		width: 1000px;
-		height: 800px;
+		margin: 50px auto auto auto;
+		width: 900px;
+		height: 700px;
 		border-style: solid;
 		border-width: 20px;
 		border-color: yellow;
+	}
+
+	#levelName {
+		color: blue;
+		margin: 0px auto;
+		font-size: 50px;
+		width: 200px;
+		text-align: center;
+		position: relative;
+		bottom: 825px;
+		display: none;
+		}
+
+	#puzzlePieceDiv {
+		display: none;
+		position: relative;
 	}
 
 /*GAME*/

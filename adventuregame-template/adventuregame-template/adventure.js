@@ -50,6 +50,7 @@
 	var easyButtonText=document.createTextNode("Easy");
 	var mediumButtonText=document.createTextNode("Medium");
 	var hardButtonText=document.createTextNode("Hard");
+	var puzzleLevelText=document.createTextNode("Puzzle");
 
 //TextNodes
 
@@ -309,6 +310,7 @@
 		document.body.style.backgroundColor="red";
 		document.body.style.fontFamily="BalooTamma";
 
+		
 		prevButton.style.display="none";
 		realStart.style.display="none";
 		fourK.style.display="block";
@@ -333,8 +335,7 @@
 	}
 
 	function startGameEasy(argument) {
-		
-		window.open("", "", "width=100 height=100");
+
 		welcome.style.display="none";
 		foot.style.display="none";
 		difficultyChoose.style.display="none";
@@ -344,7 +345,8 @@
 		difficultyDisplay.style.display="block";
 		difficultyDisplay.innerHTML="Difficulty: Easy</br>";
 		nameDisplay.style.display="block";	
-
+		levelName.style.display="block";
+		puzzlePieceDiv.style.display="block";
 		nameDisplay.innerHTML="Username: "+EnterName.value;
 
 		/*if (EnterName==null||"Enter username") {
@@ -371,6 +373,7 @@
 		difficultyDisplay.style.display="block";
 		difficultyDisplay.innerHTML="Difficulty: Medium</br>";
 		nameDisplay.style.display="block";
+		levelName.style.display="block";
 		nameDisplay.innerHTML="Username: "+EnterName.value;
 
 		puzzleDiv.style.display="grid";
@@ -392,6 +395,7 @@
 		difficultyDisplay.style.display="block";
 		difficultyDisplay.innerHTML="Difficulty: Hard</br>";
 		nameDisplay.style.display="block";
+		levelName.style.display="block";
 		nameDisplay.innerHTML="Username: "+EnterName.value;
 
 		puzzleDiv.style.display="grid";
@@ -527,7 +531,15 @@
 	var nameDisplay=document.createElement("p");
 	nameDisplay.setAttribute("id", "nameDisplay");
 
-	var img=document.createElement("img");
+	var levelName=document.createElement("p");
+	levelName.setAttribute("id", "levelName");
+
+	var puzzleEasyPiece1=document.createElement("img");
+	puzzleEasyPiece1.setAttribute("id", "puzzleEasyPiece1");
+	puzzleEasyPiece1.setAttribute("src", "img/puzzlepiece1.png");
+
+	var puzzlePieceDiv=document.createElement("div");
+	puzzlePieceDiv.setAttribute("id", "puzzlePieceDiv");
 
 	var hr=document.createElement("hr");
 
@@ -645,6 +657,13 @@
 
 	gameContainer.appendChild(puzzleDiv);
 
+	gameContainer.appendChild(levelName);
+
+	gameContainer.appendChild(puzzlePieceDiv);
+	puzzlePieceDiv.appendChild(puzzleEasyPiece1);
+
+
+
 	nextButton.appendChild(nextext);
 
 	prevButton.appendChild(pretext);
@@ -664,5 +683,7 @@
 	mediumButton.appendChild(mediumButtonText)
 
 	hardButton.appendChild(hardButtonText);
+
+	levelName.appendChild(puzzleLevelText);
 
 //appendingNeededElements
