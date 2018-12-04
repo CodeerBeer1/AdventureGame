@@ -455,12 +455,11 @@
 /*GAME*/
 
 	#fourK {
-		position: relative;
+		grid-area: 1/1;
 		float: left;
 		color: yellow;
 		margin: 0px 5px;
 		display: none;
-		width: 200px;
 	}
 
 	#welcome {
@@ -516,14 +515,22 @@
 					color: blue;
 				}
 
-	#difficultyDisplay {
-		position: relative;
+	#gameCountdown {
 		color: yellow;
-		margin: 0px 5px;
+		font-size: 100px;
+		margin: 300px auto;
+		height: 100px;
+		width: 600px;
 		display: none;
-		left: 1710px;
-		width: 200px;
+	}
+
+	#difficultyDisplay {
+		grid-area: 1/5;
+		color: yellow;
+		margin: 20px 5px 0px 0px;
+		display: none;
 		text-align: right;
+		
 	}
 
 	#EnterName {
@@ -537,39 +544,52 @@
 	}
 
 	#nameDisplay {
-		position: relative;
+		grid-area: 1/5;
 		color: yellow;
 		margin: 0px 5px;
 		display: none;
-		float: right;
-		width: 200px;
 		text-align: right;
 	}
 
 	#puzzleDiv {
 		display: none;
-		margin: 50px auto auto auto;
-		width: 900px;
+		width: 800px;
 		height: 700px;
+		grid-area: 2/2/5/5;
+		margin: 0px auto;
 		border-style: solid;
 		border-width: 20px;
 		border-color: yellow;
 	}
 
 	#levelName {
+		grid-area: 1/2/2/5;
 		color: blue;
-		margin: 0px auto;
-		font-size: 50px;
-		width: 200px;
-		text-align: center;
-		position: relative;
-		bottom: 825px;
+		margin: 50px auto 0px auto;
+		font-size: 70px;
 		display: none;
 		}
+
+	#levelUitleg {
+		grid-area: 2/5;
+		display: none;
+		color: yellow;
+		font-size: 30px;
+	}
 
 	#puzzlePieceDiv {
 		display: none;
 		position: relative;
+		margin: 0px 0px 0px 10px;
+		grid-area: 2/1;
+	}
+
+	#puzzlePieceDiv img:hover {
+		cursor: pointer;
+	}
+
+	#puzzleDiv img:hover {
+		cursor: pointer;
 	}
 
 /*GAME*/

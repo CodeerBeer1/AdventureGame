@@ -38,7 +38,7 @@
 	var modalManualTextNode=document.createTextNode("In de verhaal moet je een spel spelen. Je kan kiezen tussen Easy, Medium en Hard difficulty. Bij iedere difficulty heb je andere tijden en moeilijkheden om de level te halen. Je krijgt ook punten die afhankelijk zijn van de difficulty.");
 	var sceneOneText=document.createTextNode("Er was is een Henk. Hij was dik, lang en verlegen. Hij wou even naar buiten om boodschappen te doen, hij kwam onderweg zijn buurman Koen tegen en zei hoi tegen hem.");
 	var sceneTwoText=document.createTextNode("Henk liep naar de supermarkt. Voor de supermarkt waren veel berenvallen voor geen reden. Henk was slechtziend dus zag het niet. Hij stapte op een val en zijn voet was afgehakt door de stekelige tanden van de val. Henk en zijn voet vielen allebij in een put naast hem.");
-	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce GTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4k display 140hz HDR etc.");
+	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce GTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4K display 140Hz HDR etc.");
 	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan.");
 	var sceneFiveText=document.createTextNode("Ondertussen was Koen effe een biertje aan het tappen.");
 	var sceneSixText=document.createTextNode("Er verscheen iets op Henk's scherm waar hij een spel moet spelen om zijn voet terug te krijgen, het lijkt onlogisch maar Henk is dom en gelooft het toch.");
@@ -50,7 +50,9 @@
 	var easyButtonText=document.createTextNode("Easy");
 	var mediumButtonText=document.createTextNode("Medium");
 	var hardButtonText=document.createTextNode("Hard");
+	var gameCountdownText=document.createTextNode("Staring in "+3);
 	var puzzleLevelText=document.createTextNode("Puzzle");
+	var puzzleUitleg=document.createTextNode("Click on a puzzle piece that you want to choose and place it somewhere in the puzzle container by clicking it.")
 
 //TextNodes
 
@@ -58,7 +60,20 @@
 
 //Functions
 
-	function prevButtonHoverLight(argument) {
+
+	function showStoryText() {
+
+		modalStory.style.display="block";
+		
+	}
+
+	function showManualText() {
+
+		modalManual.style.display="block";
+
+	}
+
+	function prevButtonHoverLight() {
 		
 		prevButton.style.width="400px";
 		prevButton.style.borderRadius="0px 50px 50px 0px";
@@ -68,7 +83,7 @@
 
 	}
 
-	function nextButtonHoverDark(argument) {
+	function nextButtonHoverDark() {
 		
 		nextButton.style.width="400px";
 		nextButton.style.borderRadius="50px 0px 0px 50px";
@@ -78,7 +93,7 @@
 
 	}
 
-	function nextButtonHoverLight(argument) {
+	function nextButtonHoverLight() {
 		
 		nextButton.style.width="400px";
 		nextButton.style.borderRadius="50px 0px 0px 50px";
@@ -88,7 +103,7 @@
 
 	}
 
-	function prevButtonHoverDark(argument) {
+	function prevButtonHoverDark() {
 		
 		prevButton.style.width="400px";
 		prevButton.style.borderRadius="0px 50px 50px 0px";
@@ -98,8 +113,9 @@
 
 	}
 
-	function changeButtonStyleLight(argument) {
+	function changeButtonStyleLight() {
 
+		console.log("Changed button style Light");
 		nextButton.style.backgroundColor="white";
 		nextButton.style.color="black";
 		nextButton.style.borderColor="black";
@@ -112,7 +128,7 @@
 
 	}
 
-	function changeButtonStyleDark(argument) {
+	function changeButtonStyleDark() {
 		
 		nextButton.style.backgroundColor="#595959";
 		nextButton.style.color="white";
@@ -140,13 +156,13 @@
 
 	}
 
-	function confirm(argument) {
+	function confirm() {
 
 		modalStart.style.display="block";
 
 	}
 
-	function sceneOne(argument) {
+	function sceneOne() {
 
 		console.log("Started Game");
 		console.log("Scene 1");
@@ -173,7 +189,7 @@
 
 	}
 
-	function sceneTwo(argument) {
+	function sceneTwo() {
 
 		console.log("Scene 2");
 		document.body.style.backgroundImage="url(img/situatie2.png)";
@@ -197,7 +213,7 @@
 
 	}
 
-	function sceneThree(argument) {
+	function sceneThree() {
 
 		console.log("Scene 3");
 		document.body.style.backgroundImage="url(img/situatie3.png)";
@@ -218,7 +234,7 @@
 		sceneP.innerHTML=sceneThreeText.textContent;
 	}
 
-	function sceneFour(argument) {
+	function sceneFour() {
 		
 		console.log("Scene 4")
 		document.body.style.backgroundImage="url(img/situatie4.png)"
@@ -240,7 +256,7 @@
 
 	}
 
-	function sceneFive(argument) {
+	function sceneFive() {
 
 		console.log("Scene 5");
 		document.body.style.backgroundImage="url(img/situatie5.png)";
@@ -262,7 +278,7 @@
 
 	}
 
-	function sceneSix(argument) {
+	function sceneSix() {
 		
 		console.log("Scene 6");
 		document.body.style.backgroundImage="url(img/scherm.png)";
@@ -289,7 +305,7 @@
 
 	}
 
-	function sceneSeven(argument) {
+	function sceneSeven() {
 		
 		console.log("Starting InGame game");
 
@@ -303,7 +319,7 @@
 
 	}
 
-	function gameIntro(argument) {
+	function gameIntro() {
 
 		console.log("Started InGame game")
 		document.body.style.backgroundImage="none";
@@ -322,86 +338,166 @@
 
 	}
 
-	function showStoryText(argument) {
+	function startGameEasy() {
 
-		modalStory.style.display="block";
-		
-	}
-
-	function showManualText(argument) {
-
-		modalManual.style.display="block";
-
-	}
-
-	function startGameEasy(argument) {
-
+		console.log("Easy difficulty chosen");
+		fourK.style.display="none";
 		welcome.style.display="none";
 		foot.style.display="none";
 		difficultyChoose.style.display="none";
 		difficultyDiv.style.display="none";
 		EnterName.style.display="none";
 
-		difficultyDisplay.style.display="block";
-		difficultyDisplay.innerHTML="Difficulty: Easy</br>";
-		nameDisplay.style.display="block";	
-		levelName.style.display="block";
-		puzzlePieceDiv.style.display="block";
-		nameDisplay.innerHTML="Username: "+EnterName.value;
+		gameCountdown.style.display="block";
 
-		/*if (EnterName==null||"Enter username") {
-			nameDisplay.innerHTML="Guest"
-		}
-		else if (EnterName!=null||"Enter username") {
+		setTimeout(function () {level1Easy()}, 3000);
+
+	}
+
+	function startGameMedium() {
+
+		console.log("Medium difficulty chosen");
+		fourK.style.display="none";
+		welcome.style.display="none";
+		foot.style.display="none";
+		difficultyChoose.style.display="none";
+		difficultyDiv.style.display="none";
+		EnterName.style.display="none";
+
+		gameCountdown.style.display="block";
+
+		setTimeout(function () {level1Medium()}, 3000);
+
+
+	}
+
+	function startGameHard() {
+		
+		console.log("Hard difficulty chosen");
+		fourK.style.display="none";
+		welcome.style.display="none";
+		foot.style.display="none";
+		difficultyChoose.style.display="none";
+		difficultyDiv.style.display="none";
+		EnterName.style.display="none";
+
+		gameCountdown.style.display="block";
+
+		setTimeout(function () {level1Hard()}, 3000);
+
+	}
+
+	function level1Easy() {
+
+			console.log("Level 1")
+
+			puzzlePieceDiv.appendChild(puzzleEasyPiece1);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece2);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece3);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece4);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece5);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece6);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece7);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece8);
+			puzzlePieceDiv.appendChild(puzzleEasyPiece9);
+
+			gameContainer.style.transition="0s";
+			gameContainer.style.width="1900px";
+			gameContainer.style.height="900px";
+			gameContainer.style.display="grid";
+				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
+
+			fourK.style.display="block";
+			difficultyDisplay.style.display="block";
+			difficultyDisplay.innerHTML="Difficulty: Easy</br>";
+			nameDisplay.style.display="block";	
+			levelName.style.display="block";
+			puzzlePieceDiv.style.display="block";
+			levelUitleg.style.display="block";
+
+			gameCountdown.style.display="none";
+
 			nameDisplay.innerHTML="Username: "+EnterName.value;
-		}*/
-		
-		puzzleDiv.style.display="grid";
-		puzzleDiv.style.gridTemplateColumns="repeat(3, 33.3%)";
-		puzzleDiv.style.gridTemplateRows="repeat(3, 33.3%)";
 
+			/*if (EnterName==null||"Enter username") {
+				nameDisplay.innerHTML="Guest"
+			}
+			else if (EnterName!=null||"Enter username") {
+				nameDisplay.innerHTML="Username: "+EnterName.value;
+			}*/
+			
+			puzzleDiv.style.display="grid";
+			puzzleDiv.style.gridTemplateColumns="repeat(3, 33.3%)";
+			puzzleDiv.style.gridTemplateRows="repeat(3, 33.3%)";
 	}
 
-	function startGameMedium(argument) {
+	function level1Medium() {
+		
+		console.log("Level 1");
+		gameContainer.style.transition="0s";
+			gameContainer.style.width="1900px";
+			gameContainer.style.height="900px";
+			gameContainer.style.display="grid";
+				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
 
-		welcome.style.display="none";
-		foot.style.display="none";
-		difficultyChoose.style.display="none";
-		difficultyDiv.style.display="none";
-		EnterName.style.display="none";
+			fourK.style.display="block";
+			difficultyDisplay.style.display="block";
+			difficultyDisplay.innerHTML="Difficulty: Medium</br>";
+			nameDisplay.style.display="block";	
+			levelName.style.display="block";
+			puzzlePieceDiv.style.display="block";
+			levelUitleg.style.display="block";
 
-		difficultyDisplay.style.display="block";
-		difficultyDisplay.innerHTML="Difficulty: Medium</br>";
-		nameDisplay.style.display="block";
-		levelName.style.display="block";
-		nameDisplay.innerHTML="Username: "+EnterName.value;
+			gameCountdown.style.display="none";
 
-		puzzleDiv.style.display="grid";
+			nameDisplay.innerHTML="Username: "+EnterName.value;
 
-		puzzleDiv.style.display="grid";
-		puzzleDiv.style.gridTemplateColumns="repeat(5, 20%)";
-		puzzleDiv.style.gridTemplateRows="repeat(5, 20%)";
-
+			/*if (EnterName==null||"Enter username") {
+				nameDisplay.innerHTML="Guest"
+			}
+			else if (EnterName!=null||"Enter username") {
+				nameDisplay.innerHTML="Username: "+EnterName.value;
+			}*/
+			
+			puzzleDiv.style.display="grid";
+			puzzleDiv.style.gridTemplateColumns="repeat(5, 20%)";
+			puzzleDiv.style.gridTemplateRows="repeat(5, 20%)";
 	}
 
-	function startGameHard(argument) {
+	function level1Hard() {
 		
-		welcome.style.display="none";
-		foot.style.display="none";
-		difficultyChoose.style.display="none";
-		difficultyDiv.style.display="none";
-		EnterName.style.display="none";
+		console.log("Level 1");
+		gameContainer.style.transition="0s";
+			gameContainer.style.width="1900px";
+			gameContainer.style.height="900px";
+			gameContainer.style.display="grid";
+				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
 
-		difficultyDisplay.style.display="block";
-		difficultyDisplay.innerHTML="Difficulty: Hard</br>";
-		nameDisplay.style.display="block";
-		levelName.style.display="block";
-		nameDisplay.innerHTML="Username: "+EnterName.value;
+			fourK.style.display="block";
+			difficultyDisplay.style.display="block";
+			difficultyDisplay.innerHTML="Difficulty: Hard</br>";
+			nameDisplay.style.display="block";	
+			levelName.style.display="block";
+			puzzlePieceDiv.style.display="block";
+			levelUitleg.style.display="block";
 
-		puzzleDiv.style.display="grid";
-		puzzleDiv.style.display="grid";
-		puzzleDiv.style.gridTemplateColumns="repeat(7, 14.3%)";
-		puzzleDiv.style.gridTemplateRows="repeat(7, 14.3%)";
+			gameCountdown.style.display="none";
+
+			nameDisplay.innerHTML="Username: "+EnterName.value;
+
+			/*if (EnterName==null||"Enter username") {
+				nameDisplay.innerHTML="Guest"
+			}
+			else if (EnterName!=null||"Enter username") {
+				nameDisplay.innerHTML="Username: "+EnterName.value;
+			}*/
+			
+			puzzleDiv.style.display="grid";
+			puzzleDiv.style.gridTemplateColumns="repeat(7, 14.3%)";
+			puzzleDiv.style.gridTemplateRows="repeat(7, 14.3%)";
 
 	}
 
@@ -526,7 +622,10 @@
 	var EnterName=document.createElement("input");
 	EnterName.setAttribute("id", "EnterName");
 	EnterName.setAttribute("value", "Enter username");
-	EnterName.setAttribute("onclick", "EnterName.value=null")
+	EnterName.setAttribute("onclick", "EnterName.value=null");
+
+	var gameCountdown=document.createElement("p");
+	gameCountdown.setAttribute("id", "gameCountdown")
 
 	var nameDisplay=document.createElement("p");
 	nameDisplay.setAttribute("id", "nameDisplay");
@@ -534,9 +633,44 @@
 	var levelName=document.createElement("p");
 	levelName.setAttribute("id", "levelName");
 
+	var levelUitleg=document.createElement("p");
+	levelUitleg.setAttribute("id", "levelUitleg");
+
 	var puzzleEasyPiece1=document.createElement("img");
 	puzzleEasyPiece1.setAttribute("id", "puzzleEasyPiece1");
 	puzzleEasyPiece1.setAttribute("src", "img/puzzlepiece1.png");
+
+	var puzzleEasyPiece2=document.createElement("img");
+	puzzleEasyPiece2.setAttribute("id", "puzzleEasyPiece2");
+	puzzleEasyPiece2.setAttribute("src", "img/puzzlepiece2.jpg");
+
+	var puzzleEasyPiece3=document.createElement("img");
+	puzzleEasyPiece3.setAttribute("id", "puzzleEasyPiece3");
+	puzzleEasyPiece3.setAttribute("src", "img/puzzlepiece3.jpg");
+
+	var puzzleEasyPiece4=document.createElement("img");
+	puzzleEasyPiece4.setAttribute("id", "puzzleEasyPiece4");
+	puzzleEasyPiece4.setAttribute("src", "img/puzzlepiece4.jpg");
+
+	var puzzleEasyPiece5=document.createElement("img");
+	puzzleEasyPiece5.setAttribute("id", "puzzleEasyPiece5");
+	puzzleEasyPiece5.setAttribute("src", "img/puzzlepiece5.jpg");
+
+	var puzzleEasyPiece6=document.createElement("img");
+	puzzleEasyPiece6.setAttribute("id", "puzzleEasyPiece6");
+	puzzleEasyPiece6.setAttribute("src", "img/puzzlepiece6.jpg");
+
+	var puzzleEasyPiece7=document.createElement("img");
+	puzzleEasyPiece7.setAttribute("id", "puzzleEasyPiece7");
+	puzzleEasyPiece7.setAttribute("src", "img/puzzlepiece7.jpg");
+
+	var puzzleEasyPiece8=document.createElement("img");
+	puzzleEasyPiece8.setAttribute("id", "puzzleEasyPiece8");
+	puzzleEasyPiece8.setAttribute("src", "img/puzzlepiece8.jpg");
+
+	var puzzleEasyPiece9=document.createElement("img");
+	puzzleEasyPiece9.setAttribute("id", "puzzleEasyPiece9");
+	puzzleEasyPiece9.setAttribute("src", "img/puzzlepiece9.jpg");
 
 	var puzzlePieceDiv=document.createElement("div");
 	puzzlePieceDiv.setAttribute("id", "puzzlePieceDiv");
@@ -653,16 +787,17 @@
 
 	gameContainer.appendChild(EnterName);
 
+	gameContainer.appendChild(gameCountdown);
+
 	gameContainer.appendChild(difficultyDisplay);
 
 	gameContainer.appendChild(puzzleDiv);
 
 	gameContainer.appendChild(levelName);
 
+	gameContainer.appendChild(levelUitleg);
+
 	gameContainer.appendChild(puzzlePieceDiv);
-	puzzlePieceDiv.appendChild(puzzleEasyPiece1);
-
-
 
 	nextButton.appendChild(nextext);
 
@@ -684,6 +819,10 @@
 
 	hardButton.appendChild(hardButtonText);
 
+	gameCountdown.appendChild(gameCountdownText);
+
 	levelName.appendChild(puzzleLevelText);
+
+	levelUitleg.appendChild(puzzleUitleg);
 
 //appendingNeededElements
