@@ -22,6 +22,247 @@
 
 
 
+//CreatingNeededElements
+
+	var gameTitle=document.createElement("p");
+	gameTitle.setAttribute("id", "gameTitle");
+	gameTitle.setAttribute("onclick", "confirm()");
+	gameTitle.setAttribute("onmousemove", "backgroundColorChange('#0000b3', '#000080')");
+	gameTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
+
+	var modalStartText=document.createElement("p");
+	modalStartText.setAttribute("id", "modalStartText");
+
+	var storyBtnTitle=document.createElement("p");
+	storyBtnTitle.setAttribute("id", "storyBtnTitle");
+	storyBtnTitle.setAttribute("onclick", "showStoryText()");
+	storyBtnTitle.setAttribute("onmousemove", "backgroundColorChange('#800000', '#660000')");
+	storyBtnTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
+
+	var modalStoryText=document.createElement("p");
+	modalStoryText.setAttribute("id", "modalStoryText");
+
+	var manualTitle=document.createElement("p");
+	manualTitle.setAttribute("id", "manualTitle");
+	manualTitle.setAttribute("onclick", "showManualText()");
+	manualTitle.setAttribute("onmousemove", "backgroundColorChange('#248f24', '#145214')");
+	manualTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
+
+	var modalManualText=document.createElement("p");
+	modalManualText.setAttribute("id", "modalManualText");
+
+	var sceneP=document.createElement("p");
+	sceneP.setAttribute("id", "sceneP");
+
+	var modalStartClose=document.createElement("button");
+	modalStartClose.setAttribute("id", "modalStartClose");
+	modalStartClose.setAttribute("onclick", "modalStart.style.display='none';");
+	modalStartClose.setAttribute("onmousemove", "borderColorChange('#ff0000', 'rgba(80,0,0,0.5')")
+	modalStartClose.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')")
+
+	var modalStartContinue=document.createElement("button");
+	modalStartContinue.setAttribute("id", "modalStartContinue");
+	modalStartContinue.setAttribute("onclick", "sceneOne()");
+	modalStartContinue.setAttribute("onmousemove", "borderColorChange('#00ff00', 'rgba(0,80,0,0.5')");
+	modalStartContinue.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')");
+
+	var modalStoryClose=document.createElement("button");
+	modalStoryClose.setAttribute("id", "modalStoryClose");
+	modalStoryClose.setAttribute("onclick", "modalStory.style.display='none';");
+
+	var modalManualClose=document.createElement("button");
+	modalManualClose.setAttribute("id", "modalManualClose");
+	modalManualClose.setAttribute("onclick", "modalManual.style.display='none';");
+
+	var nextButton=document.createElement("button");
+	nextButton.setAttribute("id", "nextButton");
+	nextButton.setAttribute("onclick", "");
+
+	var prevButton=document.createElement("button");
+	prevButton.setAttribute("id", "prevButton");
+	prevButton.setAttribute("onclick", "")
+
+	var modalStart=document.createElement("div");
+	modalStart.setAttribute("id", "modalStart");
+
+	var modalStory=document.createElement("div");
+	modalStory.setAttribute("id", "modalStory")
+
+	var modalManual=document.createElement("div");
+	modalManual.setAttribute("id", "modalManual");
+
+	var volgendeDiv=document.createElement("div");
+	volgendeDiv.setAttribute("id", "volgendeDiv");
+
+	var vorigeDiv=document.createElement("div");
+	vorigeDiv.setAttribute("id", "vorigeDiv");
+
+	var realStart=document.createElement("div");
+	realStart.setAttribute("id", "realStart");
+	realStart.setAttribute("onclick", "gameIntro()");
+	realStart.setAttribute("onmousemove", "prevButton.style.opacity='0'");
+	realStart.setAttribute("onmouseleave", "prevButton.style.opacity='1'");
+
+	var fourK=document.createElement("p");
+	fourK.setAttribute("id", "fourK");
+
+	var welcome=document.createElement("p");
+	welcome.setAttribute("id", "welcome");
+
+	var foot=document.createElement("p");
+	foot.setAttribute("id", "foot");
+
+	var difficultyChoose=document.createElement("p");
+	difficultyChoose.setAttribute("id", "difficultyChoose");
+
+	var difficultyDiv=document.createElement("div");
+	difficultyDiv.setAttribute("id", "difficultyDiv");
+
+	var easyButton=document.createElement("button");
+	easyButton.setAttribute("id", "easyButton");
+	easyButton.setAttribute("onclick", "startGameEasy()");
+
+	var mediumButton=document.createElement("button");
+	mediumButton.setAttribute("id", "mediumButton");
+	mediumButton.setAttribute("onclick", "startGameMedium()");
+
+	var hardButton=document.createElement("button");
+	hardButton.setAttribute("id", "hardButton");
+	hardButton.setAttribute("onclick", "startGameHard()");
+
+	var difficultyDisplay=document.createElement("p");
+	difficultyDisplay.setAttribute("id", "difficultyDisplay");
+
+	var puzzleDiv=document.createElement("div");
+	puzzleDiv.setAttribute("id", "puzzleDiv");
+
+	var puzzleDiv=document.createElement("div");
+	puzzleDiv.setAttribute("id", "puzzleDiv");
+
+	var EnterName=document.createElement("input");
+	EnterName.setAttribute("id", "EnterName");
+	EnterName.setAttribute("value", "Enter username");
+	EnterName.setAttribute("onclick", "EnterName.value=null");
+
+	var gameCountdown=document.createElement("p");
+	gameCountdown.setAttribute("id", "gameCountdown")
+
+	var nameDisplay=document.createElement("p");
+	nameDisplay.setAttribute("id", "nameDisplay");
+
+	var levelName=document.createElement("p");
+	levelName.setAttribute("id", "levelName");
+
+	var levelUitleg=document.createElement("p");
+	levelUitleg.setAttribute("id", "levelUitleg");
+
+		//PuzzleEasy
+
+			var puzzleBlankPiece1=document.createElement("img");
+			puzzleBlankPiece1.style.src="img/white.png";
+			puzzleBlankPiece1.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece1.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece2=document.createElement("img");
+			puzzleBlankPiece2.style.src="img/white.png";
+			puzzleBlankPiece2.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece2.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece3=document.createElement("img");
+			puzzleBlankPiece3.style.src="img/white.png";
+			puzzleBlankPiece3.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece3.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece4=document.createElement("img");
+			puzzleBlankPiece4.style.src="img/white.png";
+			puzzleBlankPiece4.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece4.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece5=document.createElement("img");
+			puzzleBlankPiece5.style.src="img/white.png";
+			puzzleBlankPiece5.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece5.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece6=document.createElement("img");
+			puzzleBlankPiece6.style.src="img/white.png";
+			puzzleBlankPiece6.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece6.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece7=document.createElement("img");
+			puzzleBlankPiece7.style.src="img/white.png";
+			puzzleBlankPiece7.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece7.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece8=document.createElement("img");
+			puzzleBlankPiece8.style.src="img/white.png";
+			puzzleBlankPiece8.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece8.setAttribute("onclick", "src=puzzleSelect");
+
+			var puzzleBlankPiece9=document.createElement("img");
+			puzzleBlankPiece9.style.src="img/white.png";
+			puzzleBlankPiece9.setAttribute("class", "puzzleEasyBlankPiece");
+			puzzleBlankPiece9.setAttribute("onclick", "src=puzzleSelect");
+
+
+			var puzzleEasyPiece1=document.createElement("img");
+			puzzleEasyPiece1.setAttribute("src", "img/puzzlepiece1.png");
+			puzzleEasyPiece1.setAttribute("onclick", "puzzleSelect='img/puzzlepiece1.png'");
+
+			var puzzleEasyPiece2=document.createElement("img");
+			puzzleEasyPiece2.setAttribute("src", "img/puzzlepiece2.jpg");
+			puzzleEasyPiece2.setAttribute("onclick", "puzzleSelect='img/puzzlepiece2.jpg'");
+
+			var puzzleEasyPiece3=document.createElement("img");
+			puzzleEasyPiece3.setAttribute("src", "img/puzzlepiece3.jpg");
+			puzzleEasyPiece3.setAttribute("onclick", "puzzleSelect='img/puzzlepiece3.jpg'");
+
+			var puzzleEasyPiece4=document.createElement("img");
+			puzzleEasyPiece4.setAttribute("src", "img/puzzlepiece4.jpg");
+			puzzleEasyPiece4.setAttribute("onclick", "puzzleSelect='img/puzzlepiece4.jpg'");
+
+			var puzzleEasyPiece5=document.createElement("img");
+			puzzleEasyPiece5.setAttribute("src", "img/puzzlepiece5.jpg");
+			puzzleEasyPiece5.setAttribute("onclick", "puzzleSelect='img/puzzlepiece5.jpg'");
+
+			var puzzleEasyPiece6=document.createElement("img");
+			puzzleEasyPiece6.setAttribute("src", "img/puzzlepiece6.jpg");
+			puzzleEasyPiece6.setAttribute("onclick", "puzzleSelect='img/puzzlepiece6.jpg'");
+
+			var puzzleEasyPiece7=document.createElement("img");
+			puzzleEasyPiece7.setAttribute("src", "img/puzzlepiece7.jpg");
+			puzzleEasyPiece7.setAttribute("onclick", "puzzleSelect='img/puzzlepiece7.jpg'");
+
+			var puzzleEasyPiece8=document.createElement("img");
+			puzzleEasyPiece8.setAttribute("src", "img/puzzlepiece8.jpg");
+			puzzleEasyPiece8.setAttribute("onclick", "puzzleSelect='img/puzzlepiece8.jpg'");
+
+			var puzzleEasyPiece9=document.createElement("img");
+			puzzleEasyPiece9.setAttribute("src", "img/puzzlepiece9.jpg");
+			puzzleEasyPiece9.setAttribute("onclick", "puzzleSelect='img/puzzlepiece9.jpg'");
+
+		//PuzzleEasy
+
+		//PuzzleMedium
+
+			
+
+		//PuzzleMedium
+
+		//PuzzleHard
+
+
+
+		//PuzzleHard
+
+	var puzzlePieceDiv=document.createElement("div");
+	puzzlePieceDiv.setAttribute("id", "puzzlePieceDiv");
+
+	var hr=document.createElement("hr");
+
+//CreatingNeededElements
+
+
+
 //TextNodes
 
 	var text=document.createTextNode("Adventure Game");
@@ -50,7 +291,7 @@
 	var easyButtonText=document.createTextNode("Easy");
 	var mediumButtonText=document.createTextNode("Medium");
 	var hardButtonText=document.createTextNode("Hard");
-	var gameCountdownText=document.createTextNode("Staring in "+3);
+	var gameCountdownText=document.createTextNode("Starting in "+3);
 	var puzzleLevelText=document.createTextNode("Puzzle");
 	var puzzleUitleg=document.createTextNode("Click on a puzzle piece that you want to choose and place it somewhere in the puzzle container by clicking it.")
 
@@ -58,8 +299,19 @@
 
 
 
+//GameVars
+
+	var puzzleSelect="img/white.png";
+
+//GameVars
+
+
+
 //Functions
 
+	function gameTimeout() {
+		setTimeout(alert("hoi"),10000)
+	}
 
 	function showStoryText() {
 
@@ -185,8 +437,7 @@
 
 		nextButton.setAttribute("onclick", "sceneTwo()")
 
-		sceneP.innerHTML=sceneOneText.textContent;
-
+		sceneP.innerHTML = sceneOneText.textContent;
 	}
 
 	function sceneTwo() {
@@ -325,7 +576,6 @@
 		document.body.style.backgroundImage="none";
 		document.body.style.backgroundColor="red";
 		document.body.style.fontFamily="BalooTamma";
-
 		
 		prevButton.style.display="none";
 		realStart.style.display="none";
@@ -350,7 +600,16 @@
 
 		gameCountdown.style.display="block";
 
-		setTimeout(function () {level1Easy()}, 3000);
+		setTimeout(function() {
+			gameCountdown.innerHTML="Starting in "+2;
+			setTimeout(function() {
+				gameCountdown.innerHTML="Starting in "+1
+				setTimeout(function () {level1Easy()}, 1000);
+			}, 1000);
+		}, 1000);
+
+
+		
 
 	}
 
@@ -366,7 +625,13 @@
 
 		gameCountdown.style.display="block";
 
-		setTimeout(function () {level1Medium()}, 3000);
+		setTimeout(function() {
+			gameCountdown.innerHTML="Starting in "+2;
+			setTimeout(function() {
+				gameCountdown.innerHTML="Starting in "+1
+				setTimeout(function () {level1Medium()}, 1000);
+			}, 1000);
+		}, 1000);
 
 
 	}
@@ -383,13 +648,54 @@
 
 		gameCountdown.style.display="block";
 
-		setTimeout(function () {level1Hard()}, 3000);
+		setTimeout(function() {
+			gameCountdown.innerHTML="Starting in "+2;
+			setTimeout(function() {
+				gameCountdown.innerHTML="Starting in "+1
+				setTimeout(function () {level1Easy()}, 1000);
+			}, 1000);
+		}, 1000);
 
 	}
 
 	function level1Easy() {
 
-			console.log("Level 1")
+			console.log("Level 1 Easy")
+
+			gameContainer.style.transition="0s";
+			gameContainer.style.width="1900px";
+			gameContainer.style.height="900px";
+			gameContainer.style.display="grid";
+			gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+			gameContainer.style.gridTemplateRows="repeat(5, 20%)";
+
+			fourK.style.display="block";
+			difficultyDisplay.style.display="block";
+			difficultyDisplay.innerHTML="Difficulty: Easy</br>";
+			nameDisplay.style.display="block";	
+			levelName.style.display="block";
+			puzzleDiv.style.display="block";
+			puzzlePieceDiv.style.display="block";
+			levelUitleg.style.display="block";
+			gameCountdown.style.display="none";
+
+			if (EnterName.value==""||EnterName.value=="Enter username") {
+				nameDisplay.innerHTML="Guest"
+			}
+
+			else {
+				nameDisplay.innerHTML="Username: "+EnterName.value;
+			}
+			
+			puzzleDiv.appendChild(puzzleBlankPiece1);
+			puzzleDiv.appendChild(puzzleBlankPiece2);
+			puzzleDiv.appendChild(puzzleBlankPiece3);
+			puzzleDiv.appendChild(puzzleBlankPiece4);
+			puzzleDiv.appendChild(puzzleBlankPiece5);
+			puzzleDiv.appendChild(puzzleBlankPiece6);
+			puzzleDiv.appendChild(puzzleBlankPiece7);
+			puzzleDiv.appendChild(puzzleBlankPiece8);
+			puzzleDiv.appendChild(puzzleBlankPiece9);
 
 			puzzlePieceDiv.appendChild(puzzleEasyPiece1);
 			puzzlePieceDiv.appendChild(puzzleEasyPiece2);
@@ -401,52 +707,27 @@
 			puzzlePieceDiv.appendChild(puzzleEasyPiece8);
 			puzzlePieceDiv.appendChild(puzzleEasyPiece9);
 
+	}
+
+	function level1Medium() {
+
+
+		
+			console.log("Level 1 Medium");
+
 			gameContainer.style.transition="0s";
 			gameContainer.style.width="1900px";
 			gameContainer.style.height="900px";
 			gameContainer.style.display="grid";
-				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
-				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
-
-			fourK.style.display="block";
-			difficultyDisplay.style.display="block";
-			difficultyDisplay.innerHTML="Difficulty: Easy</br>";
-			nameDisplay.style.display="block";	
-			levelName.style.display="block";
-			puzzlePieceDiv.style.display="block";
-			levelUitleg.style.display="block";
-
-			gameCountdown.style.display="none";
-
-			nameDisplay.innerHTML="Username: "+EnterName.value;
-
-			/*if (EnterName==null||"Enter username") {
-				nameDisplay.innerHTML="Guest"
-			}
-			else if (EnterName!=null||"Enter username") {
-				nameDisplay.innerHTML="Username: "+EnterName.value;
-			}*/
-			
-			puzzleDiv.style.display="grid";
-			puzzleDiv.style.gridTemplateColumns="repeat(3, 33.3%)";
-			puzzleDiv.style.gridTemplateRows="repeat(3, 33.3%)";
-	}
-
-	function level1Medium() {
-		
-		console.log("Level 1");
-		gameContainer.style.transition="0s";
-			gameContainer.style.width="1900px";
-			gameContainer.style.height="900px";
-			gameContainer.style.display="grid";
-				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
-				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
+			gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+			gameContainer.style.gridTemplateRows="repeat(5, 20%)";
 
 			fourK.style.display="block";
 			difficultyDisplay.style.display="block";
 			difficultyDisplay.innerHTML="Difficulty: Medium</br>";
 			nameDisplay.style.display="block";	
 			levelName.style.display="block";
+			puzzleDiv.style.display="block";
 			puzzlePieceDiv.style.display="block";
 			levelUitleg.style.display="block";
 
@@ -454,27 +735,26 @@
 
 			nameDisplay.innerHTML="Username: "+EnterName.value;
 
-			/*if (EnterName==null||"Enter username") {
+			if (EnterName.value==""||EnterName.value=="Enter username") {
 				nameDisplay.innerHTML="Guest"
 			}
-			else if (EnterName!=null||"Enter username") {
+
+			else {
 				nameDisplay.innerHTML="Username: "+EnterName.value;
-			}*/
-			
-			puzzleDiv.style.display="grid";
-			puzzleDiv.style.gridTemplateColumns="repeat(5, 20%)";
-			puzzleDiv.style.gridTemplateRows="repeat(5, 20%)";
+			}
+
 	}
 
 	function level1Hard() {
 		
-		console.log("Level 1");
-		gameContainer.style.transition="0s";
+			console.log("Level 1 Hard");
+
+			gameContainer.style.transition="0s";
 			gameContainer.style.width="1900px";
 			gameContainer.style.height="900px";
 			gameContainer.style.display="grid";
-				gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
-				gameContainer.style.gridTemplateRows="repeat(5, 20%)";
+			gameContainer.style.gridTemplateColumns="repeat(5, 20%)";
+			gameContainer.style.gridTemplateRows="repeat(5, 20%)";
 
 			fourK.style.display="block";
 			difficultyDisplay.style.display="block";
@@ -488,196 +768,17 @@
 
 			nameDisplay.innerHTML="Username: "+EnterName.value;
 
-			/*if (EnterName==null||"Enter username") {
+			if (EnterName.value==""||EnterName.value=="Enter username") {
 				nameDisplay.innerHTML="Guest"
 			}
-			else if (EnterName!=null||"Enter username") {
+
+			else {
 				nameDisplay.innerHTML="Username: "+EnterName.value;
-			}*/
-			
-			puzzleDiv.style.display="grid";
-			puzzleDiv.style.gridTemplateColumns="repeat(7, 14.3%)";
-			puzzleDiv.style.gridTemplateRows="repeat(7, 14.3%)";
+			}
 
 	}
 
 //Functions
-
-
-
-//AddingNeededElements
-
-	var gameTitle=document.createElement("p");
-	gameTitle.setAttribute("id", "gameTitle");
-	gameTitle.setAttribute("onclick", "confirm()");
-	gameTitle.setAttribute("onmousemove", "backgroundColorChange('#0000b3', '#000080')");
-	gameTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
-
-	var modalStartText=document.createElement("p");
-	modalStartText.setAttribute("id", "modalStartText");
-
-	var storyBtnTitle=document.createElement("p");
-	storyBtnTitle.setAttribute("id", "storyBtnTitle");
-	storyBtnTitle.setAttribute("onclick", "showStoryText()");
-	storyBtnTitle.setAttribute("onmousemove", "backgroundColorChange('#800000', '#660000')");
-	storyBtnTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
-
-	var modalStoryText=document.createElement("p");
-	modalStoryText.setAttribute("id", "modalStoryText");
-
-	var manualTitle=document.createElement("p");
-	manualTitle.setAttribute("id", "manualTitle");
-	manualTitle.setAttribute("onclick", "showManualText()");
-	manualTitle.setAttribute("onmousemove", "backgroundColorChange('#248f24', '#145214')");
-	manualTitle.setAttribute("onmouseleave", "backgroundColorChange('#666666', '#404040')");
-
-	var modalManualText=document.createElement("p");
-	modalManualText.setAttribute("id", "modalManualText");
-
-	var sceneP=document.createElement("p");
-	sceneP.setAttribute("id", "sceneP");
-
-	var modalStartClose=document.createElement("button");
-	modalStartClose.setAttribute("id", "modalStartClose");
-	modalStartClose.setAttribute("onclick", "modalStart.style.display='none';");
-	modalStartClose.setAttribute("onmousemove", "borderColorChange('#ff0000', 'rgba(80,0,0,0.5')")
-	modalStartClose.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')")
-
-	var modalStartContinue=document.createElement("button");
-	modalStartContinue.setAttribute("id", "modalStartContinue");
-	modalStartContinue.setAttribute("onclick", "sceneOne()");
-	modalStartContinue.setAttribute("onmousemove", "borderColorChange('#00ff00', 'rgba(0,80,0,0.5')");
-	modalStartContinue.setAttribute("onmouseleave", "borderColorChange('black', 'rgba(0,0,0,0.5')");
-
-	var modalStoryClose=document.createElement("button");
-	modalStoryClose.setAttribute("id", "modalStoryClose");
-	modalStoryClose.setAttribute("onclick", "modalStory.style.display='none';");
-
-	var modalManualClose=document.createElement("button");
-	modalManualClose.setAttribute("id", "modalManualClose");
-	modalManualClose.setAttribute("onclick", "modalManual.style.display='none';");
-
-	var nextButton=document.createElement("button");
-	nextButton.setAttribute("id", "nextButton");
-	nextButton.setAttribute("onclick", "");
-
-	var prevButton=document.createElement("button");
-	prevButton.setAttribute("id", "prevButton");
-	prevButton.setAttribute("onclick", "")
-
-	var modalStart=document.createElement("div");
-	modalStart.setAttribute("id", "modalStart");
-
-	var modalStory=document.createElement("div");
-	modalStory.setAttribute("id", "modalStory")
-
-	var modalManual=document.createElement("div");
-	modalManual.setAttribute("id", "modalManual");
-
-	var volgendeDiv=document.createElement("div");
-	volgendeDiv.setAttribute("id", "volgendeDiv");
-
-	var vorigeDiv=document.createElement("div");
-	vorigeDiv.setAttribute("id", "vorigeDiv");
-
-	var realStart=document.createElement("div");
-	realStart.setAttribute("id", "realStart");
-	realStart.setAttribute("onclick", "gameIntro()");
-	realStart.setAttribute("onmousemove", "prevButton.style.opacity='0'");
-	realStart.setAttribute("onmouseleave", "prevButton.style.opacity='1'");
-
-	var fourK=document.createElement("p");
-	fourK.setAttribute("id", "fourK");
-
-	var welcome=document.createElement("p");
-	welcome.setAttribute("id", "welcome");
-
-	var foot=document.createElement("p");
-	foot.setAttribute("id", "foot");
-
-	var difficultyChoose=document.createElement("p");
-	difficultyChoose.setAttribute("id", "difficultyChoose");
-
-	var difficultyDiv=document.createElement("div");
-	difficultyDiv.setAttribute("id", "difficultyDiv");
-
-	var easyButton=document.createElement("button");
-	easyButton.setAttribute("id", "easyButton");
-	easyButton.setAttribute("onclick", "startGameEasy()");
-
-	var mediumButton=document.createElement("button");
-	mediumButton.setAttribute("id", "mediumButton");
-	mediumButton.setAttribute("onclick", "startGameMedium()");
-
-	var hardButton=document.createElement("button");
-	hardButton.setAttribute("id", "hardButton");
-	hardButton.setAttribute("onclick", "startGameHard()");
-
-	var difficultyDisplay=document.createElement("p");
-	difficultyDisplay.setAttribute("id", "difficultyDisplay");
-
-	var puzzleDiv=document.createElement("div");
-	puzzleDiv.setAttribute("id", "puzzleDiv");
-
-	var EnterName=document.createElement("input");
-	EnterName.setAttribute("id", "EnterName");
-	EnterName.setAttribute("value", "Enter username");
-	EnterName.setAttribute("onclick", "EnterName.value=null");
-
-	var gameCountdown=document.createElement("p");
-	gameCountdown.setAttribute("id", "gameCountdown")
-
-	var nameDisplay=document.createElement("p");
-	nameDisplay.setAttribute("id", "nameDisplay");
-
-	var levelName=document.createElement("p");
-	levelName.setAttribute("id", "levelName");
-
-	var levelUitleg=document.createElement("p");
-	levelUitleg.setAttribute("id", "levelUitleg");
-
-	var puzzleEasyPiece1=document.createElement("img");
-	puzzleEasyPiece1.setAttribute("id", "puzzleEasyPiece1");
-	puzzleEasyPiece1.setAttribute("src", "img/puzzlepiece1.png");
-
-	var puzzleEasyPiece2=document.createElement("img");
-	puzzleEasyPiece2.setAttribute("id", "puzzleEasyPiece2");
-	puzzleEasyPiece2.setAttribute("src", "img/puzzlepiece2.jpg");
-
-	var puzzleEasyPiece3=document.createElement("img");
-	puzzleEasyPiece3.setAttribute("id", "puzzleEasyPiece3");
-	puzzleEasyPiece3.setAttribute("src", "img/puzzlepiece3.jpg");
-
-	var puzzleEasyPiece4=document.createElement("img");
-	puzzleEasyPiece4.setAttribute("id", "puzzleEasyPiece4");
-	puzzleEasyPiece4.setAttribute("src", "img/puzzlepiece4.jpg");
-
-	var puzzleEasyPiece5=document.createElement("img");
-	puzzleEasyPiece5.setAttribute("id", "puzzleEasyPiece5");
-	puzzleEasyPiece5.setAttribute("src", "img/puzzlepiece5.jpg");
-
-	var puzzleEasyPiece6=document.createElement("img");
-	puzzleEasyPiece6.setAttribute("id", "puzzleEasyPiece6");
-	puzzleEasyPiece6.setAttribute("src", "img/puzzlepiece6.jpg");
-
-	var puzzleEasyPiece7=document.createElement("img");
-	puzzleEasyPiece7.setAttribute("id", "puzzleEasyPiece7");
-	puzzleEasyPiece7.setAttribute("src", "img/puzzlepiece7.jpg");
-
-	var puzzleEasyPiece8=document.createElement("img");
-	puzzleEasyPiece8.setAttribute("id", "puzzleEasyPiece8");
-	puzzleEasyPiece8.setAttribute("src", "img/puzzlepiece8.jpg");
-
-	var puzzleEasyPiece9=document.createElement("img");
-	puzzleEasyPiece9.setAttribute("id", "puzzleEasyPiece9");
-	puzzleEasyPiece9.setAttribute("src", "img/puzzlepiece9.jpg");
-
-	var puzzlePieceDiv=document.createElement("div");
-	puzzlePieceDiv.setAttribute("id", "puzzlePieceDiv");
-
-	var hr=document.createElement("hr");
-
-//AddingNeededElements
 
 
 
@@ -790,6 +891,8 @@
 	gameContainer.appendChild(gameCountdown);
 
 	gameContainer.appendChild(difficultyDisplay);
+
+	gameContainer.appendChild(puzzleDiv);
 
 	gameContainer.appendChild(puzzleDiv);
 
