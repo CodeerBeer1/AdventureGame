@@ -132,12 +132,11 @@
 
 	var difficultyDisplay=document.createElement("p");
 	difficultyDisplay.setAttribute("id", "difficultyDisplay");
+	difficultyDisplay.setAttribute("class", "gameClass");
 
 	var puzzleDiv=document.createElement("div");
 	puzzleDiv.setAttribute("id", "puzzleDiv");
-
-	var puzzleDiv=document.createElement("div");
-	puzzleDiv.setAttribute("id", "puzzleDiv");
+	puzzleDiv.setAttribute("class", "gameClass");
 
 	var EnterName=document.createElement("input");
 	EnterName.setAttribute("id", "EnterName");
@@ -145,106 +144,55 @@
 	EnterName.setAttribute("onclick", "EnterName.value=null");
 
 	var gameCountdown=document.createElement("p");
-	gameCountdown.setAttribute("id", "gameCountdown")
+	gameCountdown.setAttribute("id", "gameCountdown");
+
+	var timerUitleg=document.createElement("p");
+	timerUitleg.setAttribute("id", "timerUitleg");
 
 	var nameDisplay=document.createElement("p");
 	nameDisplay.setAttribute("id", "nameDisplay");
+	nameDisplay.setAttribute("class", "gameClass");
+
+	var points=document.createElement("p");
+	points.setAttribute("id", "points");
+	points.setAttribute("class", "gameClass");
+
+	var youLostModal=document.createElement("div");
+	youLostModal.setAttribute("id", "youLostModal");
+
+	var youLostModalText=document.createElement("p");
+	youLostModalText.setAttribute("id", "youLostModalText");
+
+	var retryButton=document.createElement("button");
+	retryButton.setAttribute("id", "retryButton");
+	retryButton.setAttribute("onclick", "retry()");
 
 	var levelName=document.createElement("p");
 	levelName.setAttribute("id", "levelName");
+	levelName.setAttribute("class", "gameClass");
 
 	var levelUitleg=document.createElement("p");
 	levelUitleg.setAttribute("id", "levelUitleg");
+	levelUitleg.setAttribute("class", "gameClass");
+
+	var timerGame=document.createElement("div");
+	timerGame.setAttribute("id", "timerGame");
+	timerGame.setAttribute("class", "gameClass");
+
+	var timerGameBalk=document.createElement("div");
+	timerGameBalk.setAttribute("id", "timerGameBalk");
+
+	var inGameNextButton=document.createElement("button");
+	inGameNextButton.setAttribute("id", "inGameNextButton")
+	inGameNextButton.setAttribute("onclick", "level2Easy()");
+	inGameNextButton.setAttribute("class", "gameClass");
 
 		//PuzzleEasy
-
-			var puzzleBlankPiece1=document.createElement("img");
-			puzzleBlankPiece1.style.src="img/white.png";
-			puzzleBlankPiece1.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece1.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece2=document.createElement("img");
-			puzzleBlankPiece2.style.src="img/white.png";
-			puzzleBlankPiece2.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece2.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece3=document.createElement("img");
-			puzzleBlankPiece3.style.src="img/white.png";
-			puzzleBlankPiece3.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece3.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece4=document.createElement("img");
-			puzzleBlankPiece4.style.src="img/white.png";
-			puzzleBlankPiece4.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece4.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece5=document.createElement("img");
-			puzzleBlankPiece5.style.src="img/white.png";
-			puzzleBlankPiece5.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece5.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece6=document.createElement("img");
-			puzzleBlankPiece6.style.src="img/white.png";
-			puzzleBlankPiece6.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece6.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece7=document.createElement("img");
-			puzzleBlankPiece7.style.src="img/white.png";
-			puzzleBlankPiece7.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece7.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece8=document.createElement("img");
-			puzzleBlankPiece8.style.src="img/white.png";
-			puzzleBlankPiece8.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece8.setAttribute("onclick", "src=puzzleSelect");
-
-			var puzzleBlankPiece9=document.createElement("img");
-			puzzleBlankPiece9.style.src="img/white.png";
-			puzzleBlankPiece9.setAttribute("class", "puzzleEasyBlankPiece");
-			puzzleBlankPiece9.setAttribute("onclick", "src=puzzleSelect");
-
-
-			var puzzleEasyPiece1=document.createElement("img");
-			puzzleEasyPiece1.setAttribute("src", "img/puzzlepiece1.png");
-			puzzleEasyPiece1.setAttribute("onclick", "puzzleSelect='img/puzzlepiece1.png'");
-
-			var puzzleEasyPiece2=document.createElement("img");
-			puzzleEasyPiece2.setAttribute("src", "img/puzzlepiece2.jpg");
-			puzzleEasyPiece2.setAttribute("onclick", "puzzleSelect='img/puzzlepiece2.jpg'");
-
-			var puzzleEasyPiece3=document.createElement("img");
-			puzzleEasyPiece3.setAttribute("src", "img/puzzlepiece3.jpg");
-			puzzleEasyPiece3.setAttribute("onclick", "puzzleSelect='img/puzzlepiece3.jpg'");
-
-			var puzzleEasyPiece4=document.createElement("img");
-			puzzleEasyPiece4.setAttribute("src", "img/puzzlepiece4.jpg");
-			puzzleEasyPiece4.setAttribute("onclick", "puzzleSelect='img/puzzlepiece4.jpg'");
-
-			var puzzleEasyPiece5=document.createElement("img");
-			puzzleEasyPiece5.setAttribute("src", "img/puzzlepiece5.jpg");
-			puzzleEasyPiece5.setAttribute("onclick", "puzzleSelect='img/puzzlepiece5.jpg'");
-
-			var puzzleEasyPiece6=document.createElement("img");
-			puzzleEasyPiece6.setAttribute("src", "img/puzzlepiece6.jpg");
-			puzzleEasyPiece6.setAttribute("onclick", "puzzleSelect='img/puzzlepiece6.jpg'");
-
-			var puzzleEasyPiece7=document.createElement("img");
-			puzzleEasyPiece7.setAttribute("src", "img/puzzlepiece7.jpg");
-			puzzleEasyPiece7.setAttribute("onclick", "puzzleSelect='img/puzzlepiece7.jpg'");
-
-			var puzzleEasyPiece8=document.createElement("img");
-			puzzleEasyPiece8.setAttribute("src", "img/puzzlepiece8.jpg");
-			puzzleEasyPiece8.setAttribute("onclick", "puzzleSelect='img/puzzlepiece8.jpg'");
-
-			var puzzleEasyPiece9=document.createElement("img");
-			puzzleEasyPiece9.setAttribute("src", "img/puzzlepiece9.jpg");
-			puzzleEasyPiece9.setAttribute("onclick", "puzzleSelect='img/puzzlepiece9.jpg'");
 
 		//PuzzleEasy
 
 		//PuzzleMedium
 
-			
 
 		//PuzzleMedium
 
@@ -259,7 +207,69 @@
 
 	var hr=document.createElement("hr");
 
+		//MouseSpammer
+
+			var mouseSpamButton=document.createElement("button");
+			mouseSpamButton.setAttribute("id", "mouseSpamButton");
+
+
+		//MouseSpammer
+
 //CreatingNeededElements
+
+
+
+//GameVars
+
+	var timerGameBalkSize=490;
+	
+	var pointsCount=100;
+
+	var spamCounter = 0;
+
+	var easyPuzzlePieces=[
+		"img/puzzlepiece1.png",
+		"img/puzzlepiece2.jpg",
+		"img/puzzlepiece3.jpg",
+		"img/puzzlepiece4.jpg",
+		"img/puzzlepiece5.jpg",
+		"img/puzzlepiece6.jpg",
+		"img/puzzlepiece7.jpg",
+		"img/puzzlepiece8.jpg",
+		"img/puzzlepiece9.jpg"
+	]
+
+	var mediumPuzzlePieces=[
+		"img/mediumpiece1.jpg",
+		"img/mediumpiece2.jpg",
+		"img/mediumpiece3.jpg",
+		"img/mediumpiece4.jpg",
+		"img/mediumpiece5.jpg",
+		"img/mediumpiece6.jpg",
+		"img/mediumpiece7.jpg",
+		"img/mediumpiece8.jpg",	
+		"img/mediumpiece9.jpg",
+		"img/mediumpiece10.jpg",
+		"img/mediumpiece11.jpg",
+		"img/mediumPiece12.jpg",
+		"img/mediumPiece13.jpg",
+		"img/mediumPiece14.jpg",
+		"img/mediumPiece15.jpg",
+		"img/mediumPiece16.jpg",
+		"img/mediumPiece17.jpg",
+		"img/mediumPiece18.jpg",
+		"img/mediumPiece19.jpg",
+		"img/mediumPiece20.jpg",
+		"img/mediumPiece21.jpg",
+		"img/mediumPiece22.jpg",
+		"img/mediumPiece23.jpg",
+		"img/mediumPiece24.jpg",
+		"img/mediumPiece25.jpg"
+	]
+
+	var puzzleSelect
+
+//GameVars
 
 
 
@@ -276,10 +286,10 @@
 	var pretext=document.createTextNode("Vorige");
 	var modalStartTextNode=document.createTextNode("Weet je zeker dat je de spel wilt beginnen?");
 	var modalStoryTextNode=document.createTextNode("Er was is een Henk. Hij was lang, dik en verlegen. Hij wou even naar buiten gaan om boodschappen te doen, maar dat zal hem niet zo gemakkelijk lukken. Met zijn buurman Koen aan zijn kant denkt hij dat hij zonder problemen zijn boodschappen kan doen.");
-	var modalManualTextNode=document.createTextNode("In de verhaal moet je een spel spelen. Je kan kiezen tussen Easy, Medium en Hard difficulty. Bij iedere difficulty heb je andere tijden en moeilijkheden om de level te halen. Je krijgt ook punten die afhankelijk zijn van de difficulty.");
+	var modalManualTextNode=document.createTextNode("In de verhaal moet je een spel spelen. Je kan kiezen tussen Easy, Medium en Hard difficulty. Bij iedere difficulty heb je andere tijden en moeilijkheden om de level te halen. Je krijgt ook punten die afhankelijk zijn van de difficulty, en je krijgt bij elke difficulty in de begin 100 punten. (Geoptimaliseerd voor Google Chrome)");
 	var sceneOneText=document.createTextNode("Er was is een Henk. Hij was dik, lang en verlegen. Hij wou even naar buiten om boodschappen te doen, hij kwam onderweg zijn buurman Koen tegen en zei hoi tegen hem.");
 	var sceneTwoText=document.createTextNode("Henk liep naar de supermarkt. Voor de supermarkt waren veel berenvallen voor geen reden. Henk was slechtziend dus zag het niet. Hij stapte op een val en zijn voet was afgehakt door de stekelige tanden van de val. Henk en zijn voet vielen allebij in een put naast hem.");
-	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce GTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4K display 140Hz HDR etc.");
+	var sceneThreeText=document.createTextNode("In de put stond stoel met een pc met NVIDIA GeForce RTX 2080 Ti, Intel Core i9 8000, een maxxter muis en een keyboard, maar het had wel gare speakers. En het had een 4K display 140Hz HDR etc.");
 	var sceneFourText=document.createTextNode("Op die stoel is een proximity sensor, die ervoor zorgt dat de pc aangaat. Maar Henk was dik genoeg dat de sensor kapot ging maar de pc ging alsnog aan.");
 	var sceneFiveText=document.createTextNode("Ondertussen was Koen effe een biertje aan het tappen.");
 	var sceneSixText=document.createTextNode("Er verscheen iets op Henk's scherm waar hij een spel moet spelen om zijn voet terug te krijgen, het lijkt onlogisch maar Henk is dom en gelooft het toch.");
@@ -291,26 +301,33 @@
 	var easyButtonText=document.createTextNode("Easy");
 	var mediumButtonText=document.createTextNode("Medium");
 	var hardButtonText=document.createTextNode("Hard");
-	var gameCountdownText=document.createTextNode("Starting in "+3);
+	var gameCountdownText=document.createTextNode("Starting in "+5);
+	var timerUitlegText=document.createTextNode("The red bar indicates how much blood is left in your body. Finish all the levels before you die!")
 	var puzzleLevelText=document.createTextNode("Puzzle");
 	var puzzleUitleg=document.createTextNode("Click on a puzzle piece that you want to choose and place it somewhere in the puzzle container by clicking it.")
+	var inGameNextButtonText=document.createTextNode("Next level");
+	var mouseSpammerUitleg=document.createTextNode("Click as many times as you can on this button in 10 seconds.");
+	var spamCounterText=document.createTextNode(spamCounter);
+	var pointsText=document.createTextNode("Points: "+pointsCount);
+	var youLostModalTextNode=document.createTextNode("You Died");
 
 //TextNodes
 
 
 
-//GameVars
-
-	var puzzleSelect="img/white.png";
-
-//GameVars
-
-
-
 //Functions
 
-	function gameTimeout() {
-		setTimeout(alert("hoi"),10000)
+	function retry(argument) {
+		
+		youLostModal.style.display="none";
+		var gameClass=document.querySelectorAll("#gameContainer .gameClass").style.display="none";
+		gameIntro();
+	}
+	
+	function youLost(argument) {
+		gameContainer.style.overflow="hidden";
+		gameContainer.style.width="1920px";
+		youLostModal.style.display="block";
 	}
 
 	function showStoryText() {
@@ -599,17 +616,23 @@
 		EnterName.style.display="none";
 
 		gameCountdown.style.display="block";
+		timerUitleg.style.display="block";
 
 		setTimeout(function() {
-			gameCountdown.innerHTML="Starting in "+2;
+			gameCountdown.innerHTML="Starting in "+4;
 			setTimeout(function() {
-				gameCountdown.innerHTML="Starting in "+1
-				setTimeout(function () {level1Easy()}, 1000);
+				gameCountdown.innerHTML="Starting in "+3;
+				setTimeout(function() {
+					gameCountdown.innerHTML="Starting in "+2;
+					setTimeout(function() {
+						gameCountdown.innerHTML="Starting in "+1;
+						setTimeout(function() {
+							level1Easy();
+					}, 1000);
+				}, 1000);
 			}, 1000);
 		}, 1000);
-
-
-		
+	}, 1000);		
 
 	}
 
@@ -652,11 +675,11 @@
 			gameCountdown.innerHTML="Starting in "+2;
 			setTimeout(function() {
 				gameCountdown.innerHTML="Starting in "+1
-				setTimeout(function () {level1Easy()}, 1000);
+				setTimeout(function () {level1Hard()}, 1000);
 			}, 1000);
 		}, 1000);
 
-	}
+		}
 
 	function level1Easy() {
 
@@ -678,6 +701,10 @@
 			puzzlePieceDiv.style.display="block";
 			levelUitleg.style.display="block";
 			gameCountdown.style.display="none";
+			timerUitleg.style.display="none";
+			points.style.display="block";
+			inGameNextButton.style.display="block";
+			timerGame.style.display="block";
 
 			if (EnterName.value==""||EnterName.value=="Enter username") {
 				nameDisplay.innerHTML="Guest"
@@ -687,27 +714,42 @@
 				nameDisplay.innerHTML="Username: "+EnterName.value;
 			}
 			
-			puzzleDiv.appendChild(puzzleBlankPiece1);
-			puzzleDiv.appendChild(puzzleBlankPiece2);
-			puzzleDiv.appendChild(puzzleBlankPiece3);
-			puzzleDiv.appendChild(puzzleBlankPiece4);
-			puzzleDiv.appendChild(puzzleBlankPiece5);
-			puzzleDiv.appendChild(puzzleBlankPiece6);
-			puzzleDiv.appendChild(puzzleBlankPiece7);
-			puzzleDiv.appendChild(puzzleBlankPiece8);
-			puzzleDiv.appendChild(puzzleBlankPiece9);
+			for (i=0;i<easyPuzzlePieces.length;i++) {
+				var easyPiece=document.createElement("img");
+				easyPiece.setAttribute("id", "easyPiece");
+				easyPiece.setAttribute("src", easyPuzzlePieces[i]);
 
-			puzzlePieceDiv.appendChild(puzzleEasyPiece1);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece2);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece3);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece4);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece5);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece6);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece7);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece8);
-			puzzlePieceDiv.appendChild(puzzleEasyPiece9);
+				easyPiece.onclick = function() {
+					puzzleSelect=this.src;
+				}
+				puzzlePieceDiv.appendChild(easyPiece);
+			}			
 
-	}
+			for (q=0;q<easyPuzzlePieces.length;q++) {
+				var easyBlanks=document.createElement("div");
+				easyBlanks.setAttribute("id", "easyBlanks"+q);
+				easyBlanks.setAttribute("class", "easyBlanks");
+				easyBlanks.onclick = function () {
+					this.style.backgroundImage="url("+puzzleSelect+")";
+				}
+				puzzleDiv.appendChild(easyBlanks);
+			}
+			
+			
+			
+			
+				var startTimerGame=setInterval(
+				function() {
+					timerGameBalkSize=timerGameBalkSize-1;
+					timerGameBalk.style.width=timerGameBalkSize+'px';
+					
+					if (timerGameBalkSize==0) {
+						youLost()
+					}
+				}
+			,1);
+		}
+
 
 	function level1Medium() {
 
@@ -730,6 +772,7 @@
 			puzzleDiv.style.display="block";
 			puzzlePieceDiv.style.display="block";
 			levelUitleg.style.display="block";
+			points.style.display="block";
 
 			gameCountdown.style.display="none";
 
@@ -742,6 +785,30 @@
 			else {
 				nameDisplay.innerHTML="Username: "+EnterName.value;
 			}
+
+			for (i=0;i<mediumPuzzlePieces.length;i++) {
+				var mediumPiece=document.createElement("img");
+				mediumPiece.setAttribute("id", "easyPiece");
+				mediumPiece.setAttribute("src", mediumPuzzlePieces[i]);
+
+				mediumPiece.onclick = function() {
+					puzzleSelect=this.src;
+				}
+				puzzlePieceDiv.appendChild(mediumPiece);
+			}		
+
+			for (q=0;q<mediumPuzzlePieces.length;q++) {
+				var mediumBlanks=document.createElement("div");
+				mediumBlanks.setAttribute("id", "mediumBlanks"+q);
+				mediumBlanks.setAttribute("class", "mediumBlanks");
+				mediumBlanks.onclick = function () {
+					this.style.backgroundImage="url("+puzzleSelect+")";
+				}
+				puzzleDiv.appendChild(mediumBlanks);
+			}
+			gameContainer.appendChild(inGameNextButton);
+			inGameNextButton.appendChild(inGameNextButtonText);
+			inGameNextButton.style.display="block";
 
 	}
 
@@ -763,6 +830,7 @@
 			levelName.style.display="block";
 			puzzlePieceDiv.style.display="block";
 			levelUitleg.style.display="block";
+			points.style.display="block";
 
 			gameCountdown.style.display="none";
 
@@ -775,6 +843,24 @@
 			else {
 				nameDisplay.innerHTML="Username: "+EnterName.value;
 			}
+
+	}
+
+	function level2Easy() {
+		
+			console.log("Level 2 Easy");
+
+			if (easyBlanks0.src==="img/puzzlepiece1.png") {
+				points.innerHTML=pointsCount+50;
+			}
+
+			levelName.innerHTML="Mousespammer";
+			levelUitleg.innerHTML=mouseSpammerUitleg.textContent;
+			puzzleDiv.style.display="none";
+			puzzlePieceDiv.style.display="none";
+
+			mouseSpamButton.style.display="block";
+
 
 	}
 
@@ -890,9 +976,11 @@
 
 	gameContainer.appendChild(gameCountdown);
 
+	gameContainer.appendChild(timerUitleg);
+
 	gameContainer.appendChild(difficultyDisplay);
 
-	gameContainer.appendChild(puzzleDiv);
+	gameContainer.appendChild(points)
 
 	gameContainer.appendChild(puzzleDiv);
 
@@ -901,6 +989,14 @@
 	gameContainer.appendChild(levelUitleg);
 
 	gameContainer.appendChild(puzzlePieceDiv);
+
+	gameContainer.appendChild(mouseSpamButton);
+
+	gameContainer.appendChild(timerGame);
+
+	gameContainer.appendChild(youLostModal);
+
+	gameContainer.appendChild(inGameNextButton);
 
 	nextButton.appendChild(nextext);
 
@@ -924,8 +1020,24 @@
 
 	gameCountdown.appendChild(gameCountdownText);
 
+	timerUitleg.appendChild(timerUitlegText)
+
 	levelName.appendChild(puzzleLevelText);
 
+	points.appendChild(pointsText);
+
 	levelUitleg.appendChild(puzzleUitleg);
+
+	timerGame.appendChild(timerGameBalk);
+
+	mouseSpamButton.appendChild(spamCounterText);
+
+	inGameNextButton.appendChild(inGameNextButtonText);
+
+	youLostModal.appendChild(youLostModalText);
+
+	youLostModal.appendChild(retryButton)
+
+	youLostModalText.appendChild(youLostModalTextNode)
 
 //appendingNeededElements

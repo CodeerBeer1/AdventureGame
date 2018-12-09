@@ -294,7 +294,7 @@
 		background-color: white;
 		color: black;
 		width: 700px;
-		height: 250px;
+		height: 360px;
 		padding: 40px;
 		margin: 200px auto 100px auto;
 	}
@@ -524,6 +524,31 @@
 		display: none;
 	}
 
+	#timerUitleg {
+		color: yellow;
+		font-size: 60px;
+		display: none;
+		text-align: center;
+		margin: 0px auto
+	}
+
+	#timerGame {
+		position: fixed;
+		width: 500px;
+		background-color: black;
+		height: 30px;
+		grid-area: 1/2/2/5;
+		margin: 20px 700px 0px 700px ;
+		display: none;
+	}
+
+	#timerGame div {
+		background-color: #990000;
+		height: 20px;
+		width: 490px;
+		margin: 5px 5px;
+	}
+
 	#difficultyDisplay {
 		grid-area: 1/5;
 		color: yellow;
@@ -559,6 +584,7 @@
 		top: 150px;
 		left: 500px;
 		right: 500px;
+		padding: 0px;
 		margin: 0px auto;
 		border-style: solid;
 		border-width: 20px;
@@ -574,11 +600,42 @@
 		display: none;
 		}
 
+	#points {
+		grid-area: 1/5;
+		color: yellow;
+		text-align: right;
+		margin: 40px 5px 0px 0px;
+		display: none;
+	}
+
 	#levelUitleg {
 		grid-area: 2/5;
 		display: none;
 		color: yellow;
 		font-size: 30px;
+	}
+
+	#inGameNextButton {
+		display: none;
+		grid-area: 5/5;
+		border-style: solid;
+		border-width: 10px;
+		border-color: blue;
+		background-color: yellow;
+		color: red;
+		font-size: 50px;
+		font-family: BalooTamma;
+		margin: 0px 10px 0px 0px;
+	}
+
+	#inGameNextButton:hover {
+		background-color: red;
+		border-color: yellow;
+		color: blue;
+	}
+
+	#mouseSpamButton {
+		display: none;
 	}
 
 	#puzzlePieceDiv {
@@ -588,61 +645,221 @@
 		grid-area: 2/1;
 	}
 
-	#puzzlePieceDiv img:hover {
-		cursor: pointer;
-		border-color: blue;
-		border-style: solid;
+	#puzzlePieceDiv img {
+		margin: 0px 5px 0px 0px;
 	}
 
-	.puzzleEasyBlankPiece {
+	#puzzlePieceDiv img:hover {
+		cursor: pointer;
+	}
+
+	#puzzleDiv div:hover {
+		border-style: solid;
+		border-collapse: collapse;
+		border-color: blue;
+		border-width: 10px;
+		z-index: 2;
+		cursor: pointer;
+	}
+
+	.easyBlanks {
+		border-collapse: collapse;
 		position: fixed;
 		width: 266px;
+		cursor: pointer;
 		height: 233px;
 		z-index: 1;
 	}
 
-	.puzzleEasyBlankPiece:nth-child(2) {
-		margin-left: 266px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(3) {
-		margin-left: 532px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(4) {
-		margin-top: 233px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(5) {
-		margin-left: 266px;
-		margin-top: 233px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(6) {
-		margin-top: 233px;
-		margin-left: 532px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(7) {
-		margin-top: 466px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(8) {
-		margin-top: 466px;
-		margin-left: 266px;
-	}
-
-	.puzzleEasyBlankPiece:nth-child(9) {
-		margin-top: 466px;
-		margin-left: 532px;
-	}
-
-	#puzzleDiv img:hover {
-		border-style: solid;
-		border-color: blue;
-		border-width: 10px;
+	.mediumBlanks {
+		border-collapse: collapse;
+		position: fixed;
+		width: 160px;
 		cursor: pointer;
-		z-index: 2;
+		height: 140px;
+		z-index: 1;
+	}
+
+	.easyBlanks:nth-child(2) {
+		margin-left: 266px;
+	}
+
+	.easyBlanks:nth-child(3) {
+		margin-left: 532px;
+	}
+
+	.easyBlanks:nth-child(4) {
+		margin-top: 233px;
+	}
+
+	.easyBlanks:nth-child(5) {
+		margin-left: 266px;
+		margin-top: 233px;
+	}
+
+	.easyBlanks:nth-child(6) {
+		margin-top: 233px;
+		margin-left: 532px;
+	}
+
+	.easyBlanks:nth-child(7) {
+		margin-top: 466px;
+	}
+
+	.easyBlanks:nth-child(8) {
+		margin-top: 466px;
+		margin-left: 266px;
+	}
+
+	.easyBlanks:nth-child(9) {
+		margin-top: 466px;
+		margin-left: 532px;
+	}
+
+	.mediumBlanks:nth-child(2) {
+		margin-left: 160px;
+	}
+
+	.mediumBlanks:nth-child(3) {
+		margin-left: 320px;
+	}
+
+	.mediumBlanks:nth-child(4) {
+		margin-left: 480px;
+	}
+
+	.mediumBlanks:nth-child(5) {
+		margin-left: 640px;
+	}
+
+	.mediumBlanks:nth-child(6) {
+		margin-top: 140px;
+	}
+
+	.mediumBlanks:nth-child(7) {
+		margin-left: 160px;
+		margin-top: 140px;
+	}
+
+	.mediumBlanks:nth-child(8) {
+		margin-left: 320px;
+		margin-top: 140px;
+	}
+
+	.mediumBlanks:nth-child(9) {
+		margin-left: 480px;
+		margin-top: 140px;
+	}
+
+	.mediumBlanks:nth-child(10) {
+		margin-left: 640px;
+		margin-top: 140px;
+	}
+
+	.mediumBlanks:nth-child(11) {
+		margin-top: 280px;
+	}
+
+	.mediumBlanks:nth-child(12) {
+		margin-left: 160px;
+		margin-top: 280px;
+	}
+
+	.mediumBlanks:nth-child(13) {
+		margin-left: 320px;
+		margin-top: 280px;
+	}
+
+	.mediumBlanks:nth-child(14) {
+		margin-left: 480px;
+		margin-top: 280px;
+	}
+
+	.mediumBlanks:nth-child(15) {
+		margin-left: 640px;
+		margin-top: 280px;
+	}
+
+	.mediumBlanks:nth-child(16) {
+		margin-top: 420px;
+	}
+
+	.mediumBlanks:nth-child(17) {
+		margin-top: 420px;
+		margin-left: 160px;
+	}
+
+	.mediumBlanks:nth-child(18) {
+		margin-top: 420px;
+		margin-left: 320px;
+	}
+
+	.mediumBlanks:nth-child(19) {
+		margin-top: 420px;
+		margin-left: 480px;
+	}
+
+	.mediumBlanks:nth-child(20) {
+		margin-top: 420px;
+		margin-left: 640px;
+	}
+
+	.mediumBlanks:nth-child(21) {
+		margin-top: 560px;
+	}
+
+	.mediumBlanks:nth-child(22) {
+		margin-top: 560px;
+		margin-left: 160px;
+	}
+
+	.mediumBlanks:nth-child(23) {
+		margin-top: 560px;
+		margin-left: 320px;
+	}
+
+	.mediumBlanks:nth-child(24) {
+		margin-top: 560px;
+		margin-left: 480px;
+	}
+
+	.mediumBlanks:nth-child(25) {
+		margin-top: 560px;
+		margin-left: 640px;
+	}
+
+	#mouseSpamButton {
+		grid-area: 3/3;
+		border-radius: 50pc;
+		border-color: yellow;
+		border-style: solid;
+		font-size: 100px;
+		color: white;
+		background-color: blue;
+		outline: none;
+	}
+
+	#youLostModal {
+		position: fixed;
+		display: none;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 1;
+	}
+
+	#youLostModalText {
+		margin: 50px auto 0px auto;
+		width: 700px;
+		height: 250px;
+		font-size: 150px;
+		padding: 50px;
+		text-align: center;
+		background-color: blue;
+		color: red;
+		border-style: solid;
+		border-width: 20px;
+		border-color: yellow;
 	}
 
 
