@@ -740,7 +740,7 @@
 			
 				var startTimerGame=setInterval(
 				function() {
-					timerGameBalkSize=timerGameBalkSize-1;
+					timerGameBalkSize=timerGameBalkSize-0.10;
 					timerGameBalk.style.width=timerGameBalkSize+'px';
 					
 					if (timerGameBalkSize==0) {
